@@ -1,0 +1,91 @@
+.gantt-modern .gantt {
+	.bar {
+		fill: var(--surface-white);
+	}
+
+	.arrow {
+		stroke: var(--ink-gray-5);              // was --gray-600
+	}
+
+	.bar-wrapper {
+		.bar {
+			stroke: var(--outline-gray-2);      // was --gray-300
+			stroke-width: 1;
+		}
+
+		&:hover {
+			.bar {
+				fill: var(--surface-white);
+				stroke: var(--outline-gray-3);  // was --gray-400
+			}
+
+			.bar-progress {
+				fill: var(--surface-gray-3);    // was --gray-200
+			}
+
+			.handle {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+
+		&.active {
+			.handle {
+				visibility: visible;
+				opacity: 1;
+				fill: var(--surface-blueprint-2);   // was --blue-200
+			}
+
+			.bar {
+				fill: var(--surface-blueprint-3);   // was --blue-300
+				stroke: var(--surface-blueprint-3);
+			}
+
+			.bar-progress {
+				fill: var(--surface-blueprint-5);   // was --blue-500
+			}
+
+			.bar-label {
+				fill: var(--ink-white);             // was white
+			}
+		}
+	}
+
+	.bar-progress {
+		fill: var(--surface-gray-3);            // was --gray-200
+	}
+
+	.bar-label {
+		fill: var(--text-color);
+		font-weight: normal;
+	}
+}
+
+.gantt-container .popup-wrapper {
+	min-width: 9rem;
+	border-radius: var(--border-radius);
+	@include get_textstyle("sm", "regular");
+
+	.title {
+		color: var(--ink-white);                // was white
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.subtitle {
+		color: var(--ink-gray-4);              // was --gray-500
+	}
+
+	.pointer {
+		height: 15px;
+	}
+}
+
+.gantt-modern {
+	height: calc(100vh - 240px);
+	overflow-y: auto;
+
+	.gantt-container {
+		position: relative;
+	}
+}

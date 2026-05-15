@@ -1,0 +1,202 @@
+.navbar {
+	height: $navbar-height;
+	background: var(--navbar-bg);
+	// Intrakore: Blueprint border
+	border-bottom: 1px solid var(--outline-blueprint-1);
+	padding: 0;
+
+	.navbar-brand {
+		margin-right: 0px;
+	}
+
+	@include media-breakpoint-up(md) {
+		.navbar-brand {
+			display: none;
+		}
+	}
+
+	.navbar-nav {
+		.dropdown-item {
+			padding: 6px 8px !important;
+		}
+		.nav-link {
+			padding: 0;
+		}
+	}
+
+	.container {
+		padding: 0 1rem;
+	}
+
+	.vertical-bar {
+		// Intrakore: Blueprint divider
+		border-right: 1px solid var(--outline-blueprint-2);
+		height: 24px;
+		margin: auto;
+		margin-left: var(--margin-md);
+	}
+
+	.nav-item {
+		margin: auto;
+		margin-left: var(--margin-md);
+		@include get_textstyle("sm", "regular");
+		line-height: 1rem;
+	}
+}
+
+.navbar-home {
+	img {
+		height: 32px;
+		width: 32px;
+	}
+}
+
+.search-bar {
+	max-width: 300px;
+	.desktop-navbar-modal-search {
+		border: 1.5px solid var(--outline-blueprint-4);   // visible default border
+        border-radius: var(--border-radius-lg);
+        &:hover {
+            box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+            border-radius: var(--border-radius-lg);
+        }
+    }
+
+	svg {
+		stroke: var(--icon-stroke);
+		margin-bottom: 2px;
+	}
+
+	.awesomplete {
+		width: 100%;
+		--awesomebar-shadow: var(--shadow-2xl);
+
+		input {
+			width: 100% !important;
+			padding-left: 36px;
+			height: 28px;
+			@include get_textstyle("sm", "regular");
+		}
+
+		// Intrakore: search input focus → Blueprint ring
+		input:focus {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			box-shadow: var(--awesomebar-shadow),
+				0 0 0 2px var(--outline-blueprint-1);
+			background-color: var(--awesomebar-focus-bg);
+			border-color: var(--outline-blueprint-2);
+		}
+
+		ul {
+			border: none;
+			// Intrakore: Blueprint border
+			border-top: 1px solid var(--outline-blueprint-1);
+			border-radius: 0 0 var(--border-radius) var(--border-radius);
+			box-shadow: var(--awesomebar-shadow);
+		}
+
+		input::placeholder {
+			color: var(--text-light);
+		}
+	}
+
+	// Intrakore: search icon bg → Blueprint tint
+	.search-icon {
+		background-color: var(--surface-blueprint-1);
+		border-radius: 8px;
+		padding: 6px;
+	}
+}
+
+.navbar-modal-wrapper {
+	#navbar-search {
+		display: flex;
+	}
+
+	.awesomplete {
+		width: 100%;
+
+		ul {
+			position: relative;
+			background-color: transparent;
+			border: none;
+			border-radius: unset;
+			box-shadow: none;
+			margin-top: 12px;
+		}
+
+		ul[hidden] {
+			display: block !important;
+		}
+	}
+
+	.modal-divider {
+		width: 100%;
+		height: 1px;
+		// Intrakore: Blueprint divider
+		background-color: var(--outline-blueprint-1);
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		border-radius: 50%;
+	}
+}
+
+.cool-awesomebar-modal-footer {
+	padding: 10px !important;
+}
+
+.awesomebar-modal-footer {
+	font-size: 12px;
+
+	.help-navigation {
+		display: flex;
+		gap: var(--margin-md);
+
+		.help-item-navigate {
+			display: flex;
+			gap: var(--margin-xs);
+			align-items: center;
+		}
+
+		// Intrakore: keyboard shortcut chips → Blueprint tint
+		.help-item {
+			background-color: var(--surface-blueprint-1);
+			border: 1px solid var(--outline-blueprint-1);
+			padding: 3px;
+			display: flex;
+			font-size: x-small;
+			border-radius: 4px;
+			color: var(--ink-blueprint-4);
+		}
+
+		.help-item-escape {
+			padding: 2px 4px;
+			display: inline-flex;
+		}
+	}
+}
+
+.navbar.bg-dark {
+	.dropdown-menu {
+		font-size: 0.75rem;
+		background-color: var(--surface-gray-7);
+		border-radius: 0;
+	}
+
+	.nav-link {
+		white-space: nowrap;
+		color: $light;
+
+		// Intrakore: hover → Blueprint
+		&:hover {
+			color: var(--ink-blueprint-3);
+		}
+	}
+
+	.nav-item {
+		padding: 0rem 1rem;
+		@extend .my-auto;
+	}
+}

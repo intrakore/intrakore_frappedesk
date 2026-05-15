@@ -1,0 +1,201 @@
+/*rtl:begin:ignore*/
+@import "~air-datepicker/dist/css/datepicker.min";
+/*rtl:end:ignore*/
+
+.datepicker {
+	direction: ltr;
+	font-family: inherit;
+	z-index: 9999 !important;
+	background: var(--fg-color);
+	color: var(--text-color);
+	border-radius: var(--border-radius-lg);
+	// Intrakore: Blueprint border
+	border: 1px solid var(--outline-blueprint-1);
+	box-shadow: var(--shadow-2xl);
+	position: fixed;
+
+	&.active {
+		position: absolute;
+	}
+
+	// Nav bar border
+	&--nav {
+		border-bottom: 1px solid var(--outline-blueprint-1);
+	}
+
+	// Nav title + arrow hover → Blueprint tint
+	&--nav-title:hover,
+	&--nav-action:hover {
+		background-color: var(--surface-blueprint-2);
+	}
+
+	// Time display
+	&--time-current-hours,
+	&--time-current-minutes,
+	&--time-current-seconds {
+		font-family: inherit;
+
+		&:after {
+			color: var(--text-color);
+			background-color: var(--surface-blueprint-1);
+		}
+	}
+
+	// Weekday header — ink-gray-4
+	&--day-name {
+		color: var(--ink-gray-4);
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	&--cell {
+		// Today — Blueprint text, bold
+		// From DatePicker.vue: font-extrabold text-ink-blueprint-4
+		&.-current- {
+			color: var(--ink-blueprint-4);
+			font-weight: 700;
+
+			&:not(.-selected-):not(.-in-range-) {
+				font-weight: 700;
+			}
+
+			&.-in-range- {
+				color: var(--ink-blueprint-4);
+			}
+		}
+
+		// Range start/end borders
+		&.-range-from-,
+		&.-range-to- {
+			border: 1px solid var(--outline-blueprint-2);
+			background: var(--surface-blueprint-5);
+			color: var(--ink-blueprint-1);
+		}
+
+		// Selected — Blueprint fill, white text
+		// From DatePicker.vue: bg-surface-blueprint-5 text-ink-white
+		&.-selected-,
+		&.-current-.-selected- {
+			color: var(--ink-blueprint-1);
+			background: var(--surface-blueprint-5);
+			border-radius: var(--border-radius-tiny);
+		}
+
+		// In range — Blueprint tint
+		// From DateRangePicker.vue: bg-surface-blueprint-2
+		&.-in-range- {
+			color: var(--text-color);
+			background: var(--surface-blueprint-2);
+		}
+
+		// In range + focused
+		&.-in-range-.-focus- {
+			color: var(--ink-blueprint-1);
+			background: var(--surface-blueprint-5);
+		}
+
+		// Hover — Blueprint tint
+		// From DatePicker.vue: hover:bg-surface-blueprint-2
+		&.-focus- {
+			background-color: var(--surface-blueprint-2);
+		}
+
+		// Selected + focused
+		&.-selected-.-focus- {
+			color: var(--ink-blueprint-1);
+			background: var(--surface-blueprint-5);
+		}
+	}
+
+	// Time + buttons section border
+	&--time,
+	&--buttons {
+		border-top: 1px solid var(--outline-blueprint-1);
+	}
+
+	// Time row track — Blueprint tint
+	&--time-row {
+		background-image: linear-gradient(
+			to right,
+			var(--outline-blueprint-2),
+			var(--outline-blueprint-2)
+		);
+		background-repeat: no-repeat;
+		background-size: 100% 1px;
+		background-position: left 50%;
+	}
+
+	&--time-row:first-child {
+		margin: 0;
+	}
+
+	// Popover pointer/arrow
+	&--pointer {
+		background: var(--fg-color);
+		border-top-right-radius: 2px;
+		border: 1px var(--outline-blueprint-1);
+		border-style: solid solid hidden hidden;
+	}
+
+	// Footer buttons — Blueprint ghost style
+	&--button {
+		color: var(--ink-blueprint-3);
+
+		&:hover {
+			color: var(--ink-blueprint-4);
+			background-color: var(--surface-blueprint-2);
+		}
+	}
+}
+
+// Dark mode
+[data-theme="dark"] {
+	.datepicker {
+		border-color: var(--outline-blueprint-1);
+
+		&--nav {
+			border-bottom-color: var(--outline-blueprint-1);
+		}
+
+		&--nav-title:hover,
+		&--nav-action:hover {
+			background-color: var(--surface-blueprint-2);
+		}
+
+		&--cell {
+			&.-current- {
+				color: var(--ink-blueprint-4);
+			}
+
+			&.-selected-,
+			&.-current-.-selected-,
+			&.-range-from-,
+			&.-range-to- {
+				background: var(--surface-blueprint-5);
+				color: var(--ink-blueprint-1);
+			}
+
+			&.-in-range- {
+				background: var(--surface-blueprint-2);
+			}
+
+			&.-focus- {
+				background-color: var(--surface-blueprint-2);
+			}
+		}
+
+		&--time,
+		&--buttons {
+			border-top-color: var(--outline-blueprint-1);
+		}
+
+		&--button {
+			color: var(--ink-blueprint-3);
+
+			&:hover {
+				background-color: var(--surface-blueprint-2);
+				color: var(--ink-blueprint-4);
+			}
+		}
+	}
+}

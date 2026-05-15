@@ -1,0 +1,333 @@
+$check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+
+[data-theme="dark"] {
+	--neutral: var(--neutral-black);
+	--invert-neutral: var(--neutral-white);
+
+
+	// Type Colors
+	--text-neutral: var(--gray-50);
+	--text-dark: var(--gray-900);
+	--text-muted: var(--gray-400);
+	--text-light: var(--gray-300);
+	--text-color: var(--gray-50);
+	--heading-color: var(--gray-50);
+
+	// SVG Colors
+	--icon-fill: transparent;
+	--icon-stroke: var(--gray-300);
+
+	// Error colors
+	--error-bg: var(--red-800);
+	--error-border: var(--red-400);
+
+	// Layout Colors
+	// Intrakore: Iron #1A1A1A as base dark bg
+	--bg-color:  var(--gray-900);   // #0F0F0F
+	--fg-color:  var(--gray-900);   // #0F0F0F
+	--subtle-accent: var(--gray-800);
+	--subtle-fg: var(--gray-700);
+	--fg-hover-color: var(--gray-800);
+	--card-bg: var(--gray-900);
+	--disabled-text-color: var(--gray-400);
+	--disabled-control-bg: var(--gray-800);
+	// Intrakore: control bg → dark Blueprint tint
+	--control-bg: var(--surface-blueprint-1);
+	--control-bg-on-gray: var(--surface-blueprint-2);
+	--awesomebar-focus-bg: var(--control-bg);
+	--awesomplete-hover-bg: var(--surface-blueprint-2);
+	--modal-bg: var(--gray-900);
+	--toast-bg: var(--modal-bg);
+	--popover-bg: var(--surface-gray-3);
+
+	// Button Colors — from Button.vue dark mode blueprint
+	// surface-blueprint-* dark values from colors.js
+	--btn-default-bg: var(--surface-blueprint-2);
+	--btn-default-hover-bg: var(--surface-blueprint-3);
+	--btn-ghost-hover-bg: var(--surface-blueprint-2);
+	// Intrakore: primary → Sky #5ABCF9 (dark mode primary per brand)
+	--btn-primary: var(--surface-blueprint-5);
+
+	// Border Colors
+	--border-primary: var(--outline-blueprint-2);
+
+	// Background Text Color Pairs — Blueprint overrides
+	--bg-blue: var(--surface-blueprint-2);
+	--bg-light-blue: var(--surface-blueprint-1);
+	--bg-dark-blue: var(--surface-blueprint-5);
+	--bg-green: var(--green-900);
+	--bg-yellow: var(--yellow-700);
+	--bg-orange: var(--orange-700);
+	--bg-red: var(--red-600);
+	--bg-gray: var(--gray-600);
+	--bg-grey: var(--gray-600);
+	--bg-darkgrey: var(--gray-600);
+	--bg-dark-gray: var(--gray-500);
+	--bg-light-gray: var(--gray-800);
+	--bg-purple: var(--purple-700);
+	--bg-pink: var(--pink-700);
+	--bg-cyan: var(--cyan-800);
+
+	--text-on-blue: var(--ink-blueprint-2);
+	--text-on-light-blue: var(--ink-blueprint-1);
+	--text-on-dark-blue: var(--ink-blueprint-1);
+	--text-on-green: var(--green-100);
+	--text-on-yellow: var(--yellow-50);
+	--text-on-orange: var(--orange-100);
+	--text-on-red: var(--red-50);
+	--text-on-gray: var(--gray-50);
+	--text-on-grey: var(--gray-50);
+	--text-on-darkgrey: var(--gray-200);
+	--text-on-dark-gray: var(--gray-200);
+	--text-on-light-gray: var(--gray-100);
+	--text-on-purple: var(--purple-100);
+	--text-on-pink: var(--pink-100);
+	--text-on-cyan: var(--cyan-100);
+
+	// Alert colors — dark mode Blueprint-aware
+	--alert-text-danger: var(--ink-red-3);
+	--alert-text-warning: var(--ink-amber-2);
+	// Intrakore: info → dark Blueprint ink
+	--alert-text-info: var(--ink-blueprint-3);
+	--alert-text-success: var(--ink-green-2);
+	--alert-bg-danger: var(--surface-red-1);
+	--alert-bg-warning: var(--surface-amber-1);
+	// Intrakore: info bg → dark Blueprint surface
+	--alert-bg-info: var(--surface-blueprint-1);
+	--alert-bg-success: var(--surface-green-1);
+
+	// Sidebar — Blueprint dark
+	--sidebar-select-color: var(--surface-blueprint-7);
+
+	--scrollbar-thumb-color: var(--gray-600);
+	--scrollbar-track-color: var(--gray-700);
+
+	// Timeline — Blueprint tinted in dark
+	--timeline-badge-color: var(--ink-blueprint-2);
+	--timeline-badge-bg: var(--surface-blueprint-1);
+
+	--shadow-inset: var(--fg-color);
+	--border-color: var(--outline-blueprint-1);
+	--dark-border-color: var(--outline-blueprint-2);
+	--table-border-color: var(--border-color);
+	--highlight-color: var(--gray-700);
+	--yellow-highlight-color: var(--yellow-700);
+
+	--btn-group-border-color: var(--gray-700);
+
+	--placeholder-color: var(--ink-gray-5); 
+
+	// Intrakore: highlight shadow → dark Blueprint
+	--highlight-shadow: 1px 1px 10px var(--surface-blueprint-1),
+		0px 0px 4px var(--outline-blueprint-2);
+
+	--shadow-base: 0px 4px 8px rgba(114, 176, 233, 0.06),
+		0px 0px 4px rgba(112, 172, 228, 0.12);
+
+	// "diff" colors
+	--diff-added: var(--green-800);
+	--diff-removed: var(--red-800);
+	--diff-changed: var(--blue-800);
+
+	// sidebar toggle
+	.page-title .sidebar-toggle-btn {
+		--icon-stroke: var(--ink-blueprint-2);
+	}
+
+	// progress bar — Blueprint in dark
+	--progress-bar-bg: var(--surface-blueprint-5);
+	.progress {
+		background-color: var(--surface-blueprint-1);
+	}
+
+	// input
+	--input-disabled-bg: none;
+
+	// checkbox — dark mode uses white checkmark on Blueprint
+	--checkbox-color: var(--neutral-white);
+	--checkbox-gradient: linear-gradient(
+		180deg,
+		var(--surface-blueprint-5) -124.51%,
+		var(--surface-blueprint-5) 100%
+	);
+	--checkbox-disabled-gradient: linear-gradient(
+		180deg,
+		var(--surface-blueprint-2) -124.51%,
+		var(--surface-blueprint-2) 100%
+	);
+	--checkbox-focus-shadow: 0 0 0 2px var(--outline-blueprint-2);
+
+	input[type="checkbox"] {
+		border-color: var(--outline-blueprint-2);
+
+		&:checked {
+			background-image: $check-icon-dark, var(--checkbox-gradient);
+			background-color: var(--surface-blueprint-5);
+			border: none;
+		}
+
+		&.disabled-selected,
+		&:disabled:checked {
+			background-image: $check-icon-dark, var(--checkbox-disabled-gradient);
+		}
+
+		&.disabled-deselected {
+			border: none;
+			background-color: var(--surface-blueprint-1);
+		}
+	}
+
+	// switch — Blueprint in dark
+	--switch-bg: var(--surface-gray-4);
+
+	// date-picker — Blueprint dark mode tokens
+	// From DatePicker.vue dark: surface-blueprint-5 selected, surface-blueprint-2 range
+	--date-active-text: var(--ink-blueprint-1);
+	--date-active-bg: var(--surface-blueprint-5);
+	--date-range-bg: var(--surface-blueprint-2);
+
+	// grid
+	.grid-body .editable-row {
+		--control-bg: var(--surface-blueprint-1);
+		--input-disabled-bg: var(--surface-blueprint-2);
+	}
+
+	color-scheme: dark;
+
+	.frappe-card {
+		.btn-default {
+			background-color: var(--surface-blueprint-2);
+
+			&:hover {
+				background-color: var(--surface-blueprint-3);
+			}
+		}
+	}
+
+	.modal,
+	.form-in-grid {
+		--control-bg: var(--surface-blueprint-1);
+		--border-color: var(--outline-blueprint-1);
+	}
+
+	.print-format {
+		--text-color: var(--gray-900);
+		--border-color: var(--outline-blueprint-1)
+	}
+
+	.ql-editor {
+		color: var(--text-on-gray);
+
+		&.read-mode {
+			span:not(.mention),
+			p,
+			u,
+			strong {
+				background-color: inherit !important;
+				color: inherit !important;
+			}
+		}
+	}
+
+	.comment-input-wrapper .ql-editor.ql-blank::before {
+		color: var(--text-color);
+	}
+
+	// Frappe Charts Colors
+	.chart-container {
+		--charts-label-color: var(--gray-300);
+		--charts-axis-line-color: var(--subtle-fg);
+		--charts-stroke-width: 5px;
+		--charts-dataset-circle-stroke: #ffffff;
+		--charts-dataset-circle-stroke-width: var(--charts-stroke-width);
+		--charts-tooltip-title: var(--charts-label-color);
+		--charts-tooltip-label: var(--charts-label-color);
+		--charts-tooltip-value: white;
+		--charts-tooltip-bg: var(--gray-900);
+		--charts-legend-label: var(--charts-label-color);
+	}
+
+	// heatmap
+	.heatmap-chart {
+		g > rect[fill="#ebedf0"] {
+			fill: var(--surface-blueprint-1);
+		}
+	}
+
+	.rating {
+		--star-fill: var(--gray-500);
+		.star-hover {
+			--star-fill: var(--gray-400);
+		}
+	}
+
+	// skeleton
+	--skeleton-bg: var(--surface-blueprint-1);
+
+	// Arrow SVGs — white stroke for dark bg (unchanged)
+	--right-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.25 7.5L4.75 4L1.25 0.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+	--left-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.5 9.5L4 6l3.5-3.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'></path></svg>");
+
+	::selection {
+		color: var(--text-color);
+		background: var(--surface-blueprint-3);
+	}
+
+	// Indicator dots — dark mode Blueprint override
+	$indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, darkgrey, purple,
+		light-blue;
+
+	@each $color in $indicator-colors {
+		.indicator {
+			--indicator-dot-#{"" + $color}: var(--bg-#{$color});
+		}
+	}
+
+	// Intrakore brand indicator dots — dark mode
+	.indicator.blueprint {
+		--indicator-dot-blueprint: var(--ink-blueprint-3);
+	}
+	.indicator.dusk {
+		--indicator-dot-dusk: var(--ink-dusk-3);
+	}
+	.indicator.clearing {
+		--indicator-dot-clearing: var(--ink-clearing-2);
+	}
+	// Intrakore: search bar border thinner in dark mode
+.search-bar {
+    .desktop-navbar-modal-search {
+        border-width: 1.2px;
+    }
+}
+// Intrakore: thinner borders in dark mode
+.form-control,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+    border-width: 1.2px;
+}
+
+.frappe-control[data-fieldtype="Select"] {
+    select.form-control {
+        border-width: 1.2px;
+    }
+}
+// Intrakore: Quill border thinner in dark mode
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+    border-color: var(--outline-blueprint-1);
+    border-width: 1.2px;
+	.ql-container.ql-bubble {
+    border-color: var(--outline-blueprint-1);
+    border-width: 1.2px;
+}
+}	
+}

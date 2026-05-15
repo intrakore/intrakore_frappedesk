@@ -1,0 +1,156 @@
+:root {
+	// ============================================================
+	// INTRAKORE FONT STACK
+	// Body + UI: Avenir (Book/Black/Roman), Inter as fallback
+	// Headings: ITC Avant Garde Gothic Pro (Medium/Demi)
+	// Kit Rounded: logo only — not used in desk UI
+	// ============================================================
+	--font-stack: "Avenir", "AvenirLTStd", "Avenir LT Std",
+		"InterVariable", "Inter", "-apple-system", "BlinkMacSystemFont",
+		"Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+
+	--font-stack-heading: "ITC Avant Garde Gothic Pro", "ITCAvantGardeStd",
+		"Avenir", "InterVariable", "Inter", sans-serif;
+
+	// font size — unchanged
+	--text-tiny: 11px;
+	--text-2xs: 12px;
+	--text-xs: 12px;
+	--text-sm: 13px;
+	--text-md: 14px;
+	--text-base: 14px;
+	--text-lg: 16px;
+	--text-xl: 18px;
+	--text-2xl: 20px;
+	--text-3xl: 24px;
+	--text-4xl: 26px;
+	--text-5xl: 28px;
+	--text-6xl: 32px;
+	--text-7xl: 40px;
+	--text-8xl: 44px;
+	--text-9xl: 48px;
+	--text-10xl: 52px;
+	--text-11xl: 56px;
+	--text-12xl: 64px;
+
+	// font weight — unchanged
+	--weight-regular: 420;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+	--weight-black: 800;
+
+	// line height — unchanged
+	--text-line-height-3xl: 115%;
+	--text-line-height-4xl: 160%;
+	--text-line-height-7xl: 140%;
+	--text-line-height-12xl: 130%;
+	--text-line-height-14xl: 120%;
+	--para-line-height-2-xs: 160%;
+	--para-line-height-sm: 150%;
+	--para-line-height-2xl: 148%;
+	--para-line-height-3xl: 140%;
+
+	// font color
+	// Intrakore: heading → Iron #1A1A1A (near-black brand token)
+	--heading-color: #1A1A1A;
+	--text-neutral: var(--gray-900);
+	--text-color: var(--gray-800);
+	--text-muted: var(--gray-700);
+	--text-light: var(--gray-600);
+	--text-dark: var(--fg-color);
+}
+
+// Apply Avenir to body globally
+// Apply ITC Avant Garde Gothic Pro to headings globally
+html,
+body {
+	font-family: var(--font-stack);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.head-title,
+.page-title,
+.modal-title,
+.form-section .section-head,
+.widget-head .widget-title,
+.chart-title {
+	font-family: var(--font-stack-heading);
+}
+
+// h1–h3: Demi (600), h4–h6: Medium (500)
+h1, h2, h3,
+.h1, .h2, .h3 {
+	font-family: var(--font-stack-heading);
+	font-weight: var(--weight-semibold);
+	color: var(--heading-color);
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	font-family: var(--font-stack-heading);
+	font-weight: var(--weight-medium);
+	color: var(--heading-color);
+}
+
+.text-ink-gray-7 {
+	color: var(--ink-gray-7);
+}
+
+// ============================================================
+// SASS typography helpers — unchanged
+// ============================================================
+
+$weight-list: "regular", "medium", "semibold", "bold", "black";
+
+$letter-space: (
+	"tiny": 0.09em,
+	"2xs": 0.01em,
+	"xs": 0.02em,
+	"xs-heavy": 0.015em,
+	"sm": 0.02em,
+	"sm-heavy": 0.015em,
+	"base": 0.02em,
+	"base-heavy": 0.015em,
+	"lg": 0.02em,
+	"lg-heavy": 0.015em,
+	"xl": 0.01em,
+	"2xl": 0.01em,
+	"3xl": 0.005em,
+	"4xl": 0.005em,
+	"5xl": 0.005em,
+	"5xl-heavy": 0.5px,
+	"6xl": 0.5px,
+);
+
+$letter-space-heavy: (
+	"xs": "semibold",
+	"sm": "semibold",
+	"base": "medium",
+	"lg": "medium",
+	"5xl": "bold",
+);
+
+@function get_letterspacing($name, $weight) {
+	$heavy: map-get($letter-space-heavy, $name);
+	@if ((index($weight-list, $heavy) or length($weight-list)) <= index($weight-list, $weight)) {
+		@return map-get($letter-space, #{$name}-heavy);
+	}
+	@return map-get($letter-space, $name);
+}
+
+@mixin get_textstyle($name, $weight) {
+	font-size: var(--text-#{$name});
+	font-weight: var(--weight-#{$weight});
+	letter-spacing: get_letterspacing($name, $weight);
+	@if $name == "tiny" {
+		text-transform: "uppercase";
+	}
+}
+
+@mixin truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

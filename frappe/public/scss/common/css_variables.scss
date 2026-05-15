@@ -1,0 +1,174 @@
+$input-height: 28px;
+$disabled-input-height: 22px;
+
+:root,
+[data-theme="light"] {
+	--brand-color: var(--primary);
+
+	--padding-xs: 5px;
+	--padding-sm: 7px;
+	--padding-md: 15px;
+	--padding-lg: 20px;
+	--padding-xl: 30px;
+	--padding-2xl: 40px;
+
+	--margin-xs: 5px;
+	--margin-sm: 10px;
+	--margin-md: 15px;
+	--margin-lg: 20px;
+	--margin-xl: 30px;
+	--margin-2xl: 40px;
+
+	--page-max-width: 900px;
+
+	--modal-shadow: var(--shadow-md);
+	--card-shadow: var(--shadow-sm);
+	--btn-shadow: var(--shadow-xs);
+
+	// navbar
+	--navbar-height: 48px;
+
+	// SVG Colors
+	--icon-fill: transparent;
+	--icon-fill-bg: var(--fg-color);
+	--icon-stroke: var(--gray-800);
+
+	// Background Text Color Pairs
+	--bg-blue: var(--surface-blueprint-2);
+	--bg-light-blue: var(--surface-blueprint-1);
+	--bg-dark-blue: var(--surface-blueprint-5);
+	--bg-green: var(--green-100);
+	--bg-yellow: var(--yellow-100);
+	--bg-orange: var(--orange-100);
+	--bg-red: var(--red-100);
+	--bg-gray: var(--gray-100);
+	--bg-grey: var(--gray-100);
+	--bg-light-gray: var(--gray-100);
+	--bg-dark-gray: var(--gray-400);
+	--bg-darkgrey: var(--gray-400);
+	--bg-purple: var(--purple-100);
+	--bg-pink: var(--pink-50);
+	--bg-cyan: var(--cyan-50);
+
+	--text-on-blue: var(--ink-blueprint-4);
+	--text-on-light-blue: var(--ink-blueprint-3);
+	--text-on-dark-blue: var(--ink-blueprint-1);
+	--text-on-green: var(--green-800);
+	--text-on-yellow: var(--yellow-700);
+	--text-on-orange: var(--orange-700);
+	--text-on-red: var(--red-700);
+	--text-on-gray: var(--gray-700);
+	--text-on-grey: var(--gray-700);
+	--text-on-darkgrey: var(--gray-800);
+	--text-on-dark-gray: var(--gray-800);
+	--text-on-light-gray: var(--gray-800);
+	--text-on-purple: var(--purple-700);
+	--text-on-pink: var(--pink-700);
+	--text-on-cyan: var(--cyan-700);
+
+	// alert colors
+	--alert-text-danger: var(--red-600);
+	--alert-text-warning: var(--yellow-700);
+	--alert-text-info: var(--ink-blue-2);
+	--alert-text-success: var(--green-700);
+	--alert-bg-danger: var(--red-50);
+	--alert-bg-warning: var(--yellow-50);
+	--alert-bg-info: var(--surface-blue-1);
+	--alert-bg-success: var(--green-100);
+
+	// Layout Colors
+	--bg-color: var(--surface-white);
+	--fg-color: var(--surface-white);
+	--subtle-accent: var(--gray-50);
+	--subtle-fg: var(--gray-100);
+	--navbar-bg: var(--neutral);
+	--fg-hover-color: var(--gray-100);
+	--card-bg: var(--fg-color);
+	--disabled-text-color: var(--ink-gray-4);
+	--disabled-control-bg: var(--gray-50);
+	--control-bg: var(--surface-white);
+	--control-bg-on-gray: var(--surface-blueprint-2);
+	--awesomebar-focus-bg: var(--fg-color);
+	--modal-bg: var(--surface-modal);
+	--toast-bg: var(--modal-bg);
+	--popover-bg: var(--surface-modal);
+
+	--awesomplete-hover-bg: var(--surface-blueprint-2);
+
+	// Button Colors
+	--btn-primary: var(--surface-blueprint-5);
+	--btn-default-bg: var(--surface-blueprint-2);
+	--btn-default-hover-bg: var(--surface-blueprint-3);
+	--btn-ghost-hover-bg: var(--surface-blueprint-2);
+
+	// Border Colors
+	--border-primary: var(--outline-blueprint-2);
+
+	// Other Colors
+	--sidebar-select-color: var(--surface-blueprint-7);
+
+	--scrollbar-thumb-color: var(--gray-400);
+	--scrollbar-track-color: var(--gray-200);
+
+	--shadow-inset: inset 0px -1px 0px var(--gray-300);
+	--border-color: var(--outline-blueprint-1);
+	--dark-border-color: var(--outline-blueprint-2);
+	--table-border-color: var(--gray-200);
+	--highlight-color: var(--gray-50);
+	--yellow-highlight-color: var(--yellow-50);
+
+	--btn-group-border-color: var(--gray-300);
+
+	--placeholder-color: var(--ink-gray-5);
+
+	--highlight-shadow: 1px 1px 10px var(--surface-blueprint-1), 0px 0px 4px var(--outline-blueprint-3);
+
+	// code block
+	--code-block-bg: var(--gray-900);
+	--code-block-text: var(--gray-400);
+
+	--primary-color: var(--surface-blueprint-5);
+	--btn-height: 28px;
+
+	// input
+	--input-height: #{$input-height};
+	--input-disabled-bg: var(--gray-200);
+
+	// Checkbox
+	--checkbox-right-margin: var(--margin-xs);
+	--checkbox-size: 14px;
+	--checkbox-color: var(--neutral-black);
+
+	--checkbox-focus-shadow: 0 0 0 2px var(--outline-blueprint-1);
+	--checkbox-gradient: linear-gradient(180deg, var(--surface-blueprint-5) -124.51%, var(--surface-blueprint-5) 100%);
+	--checkbox-disabled-gradient: linear-gradient(
+		180deg,
+		var(--disabled-control-bg) -124.51%,
+		var(--disabled-control-bg) 100%
+	);
+
+	// switch
+	--switch-bg: var(--gray-300);
+
+	// "diff" colors
+	--diff-added: var(--green-200);
+	--diff-removed: var(--red-200);
+	--diff-changed: var(--blue-200);
+
+	--right-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.25 7.5L4.75 4L1.25 0.5' stroke='%23000FCC' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+	--left-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.5 9.5L4 6l3.5-3.5' stroke='%23000FCC' stroke-linecap='round' stroke-linejoin='round'></path></svg>");
+
+	@include media-breakpoint-down(md) {
+		--checkbox-size: 18px;
+	}
+	// Override frappe-datatable library defaults
+:root {
+    --dt-primary-color: var(--surface-blueprint-5);
+    --dt-header-cell-bg: var(--surface-blueprint-2);
+    --dt-cell-bg: var(--surface-white);
+    --dt-border-color: var(--table-border-color);
+    --dt-text-color: var(--text-muted);
+    --dt-light-bg: var(--highlight-color);
+    --dt-selection-highlight-color: var(--highlight-color);
+}
+}

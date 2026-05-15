@@ -1,0 +1,72 @@
+.breadcrumb {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;        // was white — use transparent
+}
+
+.navbar-breadcrumbs {
+    flex-wrap: nowrap;
+    align-items: center;
+    line-height: 1;
+
+    a {
+        text-decoration: none;
+        color: var(--ink-blueprint-2);    // was --ink-gray-5
+        font-weight: var(--weight-medium);
+        font-size: var(--text-lg);
+        letter-spacing: get_letterspacing("sm", "regular");
+
+        &:hover {
+            color: var(--ink-blueprint-3); // was --ink-gray-7
+        }
+
+        &:before {
+            content: "/";
+            display: inline-block;
+            margin-left: 6px;
+            margin-right: 6px;
+            color: var(--ink-blueprint-2); // was --ink-gray-4
+            font-size: 14px;
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            font-weight: 420;
+        }
+    }
+
+    &.mobile-no-divider {
+        a:before {
+            display: none;
+        }
+    }
+
+    // Home icon — override icon-stroke to Blueprint
+li:first-child a {
+    --icon-stroke: var(--ink-blueprint-2);
+
+    &:before {
+        content: none;    // ← add this
+    }
+
+    .icon {
+        stroke: var(--ink-blueprint-2);
+    }
+
+    &:hover {
+        --icon-stroke: var(--ink-blueprint-3);
+
+        .icon {
+            stroke: var(--ink-blueprint-3);
+        }
+    }
+}
+    li.disabled {
+        a {
+            pointer-events: none;
+        }
+    }
+
+    li:last-child > a {
+        font-weight: var(--weight-medium);
+        color: var(--ink-blueprint-3) !important;  // was --ink-gray-9
+    }
+}

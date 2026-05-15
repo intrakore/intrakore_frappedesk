@@ -1,0 +1,404 @@
+.indicator,
+.indicator-pill,
+.indicator-pill-right,
+.indicator-pill-round {
+	display: inline-flex;
+	align-items: center;
+}
+
+.indicator::before {
+	content: "";
+	height: 8px;
+	width: 8px;
+	border-radius: var(--border-radius);
+	margin: 0px 8px 0px 0px;
+}
+
+.indicator-pill,
+.indicator-pill-right {
+	@include get_textstyle("sm", "regular");
+	padding: 4.5px 8px;
+	border-radius: var(--border-radius-full);
+	height: 20px;
+}
+
+.indicator-pill-round {
+	@include get_textstyle("sm", "regular");
+	justify-content: center;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+}
+
+.indicator-pill:not(.no-indicator-dot)::before,
+.indicator-pill-right::after {
+	content: "";
+	display: inline-table;
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	margin-right: 6px;
+	flex-shrink: 0;
+}
+
+.indicator-pill.no-margin::before,
+.indicator-pill-right.no-margin::after {
+	margin-right: 0px;
+}
+
+.indicator-pill-right::after {
+	margin: 0 0 0 4px;
+}
+
+// ============================================================
+// INTRAKORE INDICATOR COLOR OVERRIDES
+// Matched to Badge.vue all themes × variants
+// Original colors preserved; Intrakore brand colors added/overridden
+// ============================================================
+
+// Original Frappe indicator color loop — preserved
+$indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, darkgrey, purple,
+	light-blue;
+
+@each $color in $indicator-colors {
+	.indicator.#{"" + $color} {
+		&::before,
+		&::after {
+			background: var(--indicator-dot-#{$color});
+		}
+	}
+
+	.indicator-pill.#{"" + $color},
+	.indicator-pill-right.#{"" + $color},
+	.indicator-pill-round.#{"" + $color} {
+		background: var(--bg-#{$color});
+		color: var(--text-on-#{$color});
+
+		&::before,
+		&::after {
+			background: var(--text-on-#{$color});
+		}
+	}
+
+	.indicator {
+		--indicator-dot-#{"" + $color}: var(--text-on-#{$color});
+	}
+}
+
+// ============================================================
+// BLUEPRINT — Project Management module primary
+// From Badge.vue blueprint theme:
+//   subtle:  bg-surface-blueprint-2  text-ink-blueprint-4
+//   solid:   bg-surface-blueprint-7  text-ink-blueprint-1
+//   outline: border-outline-blueprint-2 text-ink-blueprint-4
+// ============================================================
+
+.indicator.blueprint {
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-3);
+	}
+}
+
+.indicator-pill.blueprint,
+.indicator-pill-right.blueprint,
+.indicator-pill-round.blueprint {
+	background: var(--surface-blueprint-2);
+	color: var(--ink-blueprint-4);
+
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-4);
+	}
+}
+
+.indicator-pill.blueprint.solid,
+.indicator-pill-right.blueprint.solid,
+.indicator-pill-round.blueprint.solid {
+	background: var(--surface-blueprint-7);
+	color: var(--ink-blueprint-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-1);
+	}
+}
+
+.indicator-pill.blueprint.outline,
+.indicator-pill-right.blueprint.outline,
+.indicator-pill-round.blueprint.outline {
+	background: transparent;
+	color: var(--ink-blueprint-4);
+	border: 1px solid var(--outline-blueprint-2);
+
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-4);
+	}
+}
+
+// ============================================================
+// DUSK — Finance module
+// From Badge.vue dusk theme (maps to purple in Frappe):
+//   subtle:  bg-surface-dusk-2  text-ink-dusk-4
+//   solid:   bg-surface-dusk-5  text-ink-dusk-1
+//   outline: border-outline-dusk-2 text-ink-dusk-4
+// ============================================================
+
+.indicator.dusk,
+.indicator.purple {
+	&::before,
+	&::after {
+		background: var(--ink-dusk-3);
+	}
+}
+
+.indicator-pill.dusk,
+.indicator-pill-right.dusk,
+.indicator-pill-round.dusk {
+	background: var(--surface-dusk-2);
+	color: var(--ink-dusk-4);
+
+	&::before,
+	&::after {
+		background: var(--ink-dusk-4);
+	}
+}
+
+.indicator-pill.dusk.solid,
+.indicator-pill-right.dusk.solid,
+.indicator-pill-round.dusk.solid {
+	background: var(--surface-dusk-5);
+	color: var(--ink-dusk-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-dusk-1);
+	}
+}
+
+.indicator-pill.dusk.outline,
+.indicator-pill-right.dusk.outline,
+.indicator-pill-round.dusk.outline {
+	background: transparent;
+	color: var(--ink-dusk-4);
+	border: 1px solid var(--outline-dusk-2);
+
+	&::before,
+	&::after {
+		background: var(--ink-dusk-4);
+	}
+}
+
+// ============================================================
+// CLEARING — Procurement module
+// From Badge.vue green theme (Clearing maps to green):
+//   subtle:  bg-surface-green-2  text-ink-green-3
+//   solid:   bg-surface-green-3  text-ink-green-1
+//   outline: border-outline-green-2 text-ink-green-3
+// ============================================================
+
+.indicator.clearing {
+	&::before,
+	&::after {
+		background: var(--ink-clearing-2);
+	}
+}
+
+.indicator-pill.clearing,
+.indicator-pill-right.clearing,
+.indicator-pill-round.clearing {
+	background: var(--surface-clearing-2);
+	color: var(--ink-clearing-3);
+
+	&::before,
+	&::after {
+		background: var(--ink-clearing-3);
+	}
+}
+
+.indicator-pill.clearing.solid,
+.indicator-pill-right.clearing.solid,
+.indicator-pill-round.clearing.solid {
+	background: var(--surface-clearing-3);
+	color: var(--ink-clearing-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-clearing-1);
+	}
+}
+
+.indicator-pill.clearing.outline,
+.indicator-pill-right.clearing.outline,
+.indicator-pill-round.clearing.outline {
+	background: transparent;
+	color: var(--ink-clearing-3);
+	border: 1px solid var(--outline-clearing-2);
+
+	&::before,
+	&::after {
+		background: var(--ink-clearing-3);
+	}
+}
+
+// ============================================================
+// BLUE override — remap to Blueprint for consistency
+// Frappe uses 'blue' for info states; point to Blueprint tokens
+// From Badge.vue blue theme:
+//   subtle: bg-surface-blue-2 text-ink-blue-2
+// ============================================================
+
+.indicator.blue {
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-3);
+	}
+}
+
+.indicator-pill.blue,
+.indicator-pill-right.blue,
+.indicator-pill-round.blue {
+	background: var(--surface-blueprint-2);
+	color: var(--ink-blueprint-4);
+
+	&::before,
+	&::after {
+		background: var(--ink-blueprint-4);
+	}
+}
+
+// ============================================================
+// ORANGE / AMBER — warning states
+// From Badge.vue orange theme:
+//   subtle: bg-surface-amber-1 text-ink-amber-3
+//   solid:  bg-surface-amber-2 text-ink-amber-1
+//   outline: border-outline-amber-2 text-ink-amber-3
+// ============================================================
+
+.indicator-pill.orange,
+.indicator-pill-right.orange,
+.indicator-pill-round.orange,
+.indicator-pill.amber,
+.indicator-pill-right.amber,
+.indicator-pill-round.amber {
+	background: var(--surface-amber-1);
+	color: var(--ink-amber-3);
+
+	&::before,
+	&::after {
+		background: var(--ink-amber-3);
+	}
+}
+
+.indicator-pill.orange.solid,
+.indicator-pill.amber.solid {
+	background: var(--surface-amber-2);
+	color: var(--ink-amber-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-amber-1);
+	}
+}
+
+// ============================================================
+// RED — danger/error states
+// From Badge.vue red theme:
+//   subtle: bg-surface-red-2 text-ink-red-4
+//   solid:  bg-surface-red-4 text-ink-red-1
+//   outline: border-outline-red-2 text-ink-red-4
+// ============================================================
+
+.indicator-pill.red,
+.indicator-pill-right.red,
+.indicator-pill-round.red {
+	background: var(--surface-red-2);
+	color: var(--ink-red-4);
+
+	&::before,
+	&::after {
+		background: var(--ink-red-4);
+	}
+}
+
+.indicator-pill.red.solid {
+	background: var(--surface-red-4);
+	color: var(--ink-red-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-red-1);
+	}
+}
+
+.indicator-pill.red.outline {
+	background: transparent;
+	color: var(--ink-red-4);
+	border: 1px solid var(--outline-red-2);
+
+	&::before,
+	&::after {
+		background: var(--ink-red-4);
+	}
+}
+
+// ============================================================
+// GRAY — neutral/default states
+// From Badge.vue gray theme:
+//   subtle: bg-surface-gray-2 text-ink-gray-6
+//   solid:  bg-surface-gray-7 text-ink-white
+//   outline: border-outline-gray-1 text-ink-gray-6
+// ============================================================
+
+.indicator-pill.gray,
+.indicator-pill-right.gray,
+.indicator-pill-round.gray,
+.indicator-pill.grey,
+.indicator-pill-right.grey,
+.indicator-pill-round.grey {
+	background: var(--surface-gray-2);
+	color: var(--ink-gray-6);
+
+	&::before,
+	&::after {
+		background: var(--ink-gray-6);
+	}
+}
+
+.indicator-pill.gray.solid,
+.indicator-pill.grey.solid {
+	background: var(--surface-gray-7);
+	color: var(--ink-white);
+
+	&::before,
+	&::after {
+		background: var(--ink-white);
+	}
+}
+
+.indicator-pill.gray.outline,
+.indicator-pill.grey.outline {
+	background: transparent;
+	color: var(--ink-gray-6);
+	border: 1px solid var(--outline-gray-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-gray-6);
+	}
+}
+
+// ============================================================
+// BLINK ANIMATION — unchanged
+// ============================================================
+
+.indicator.blink {
+	animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0.5;
+	}
+}
