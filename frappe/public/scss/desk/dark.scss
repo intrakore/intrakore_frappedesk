@@ -32,8 +32,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--disabled-text-color: var(--gray-400);
 	--disabled-control-bg: var(--gray-800);
 	// Intrakore: control bg → dark Blueprint tint
-	--control-bg: var(--surface-blueprint-1);
-	--control-bg-on-gray: var(--surface-blueprint-2);
+	--control-bg: transparent;
+	--control-bg-on-gray: var(--surface-gray-3);
 	--awesomebar-focus-bg: var(--control-bg);
 	--awesomplete-hover-bg: var(--surface-blueprint-2);
 	--modal-bg: var(--gray-900);
@@ -107,8 +107,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--timeline-badge-bg: var(--surface-blueprint-1);
 
 	--shadow-inset: var(--fg-color);
-	--border-color: var(--outline-blueprint-1);
-	--dark-border-color: var(--outline-blueprint-2);
+	--border-color: var(--outline-gray-3);
+	--dark-border-color: var(--outline-gray-4);
 	--table-border-color: var(--border-color);
 	--highlight-color: var(--gray-700);
 	--yellow-highlight-color: var(--yellow-700);
@@ -152,8 +152,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	);
 	--checkbox-disabled-gradient: linear-gradient(
 		180deg,
-		var(--surface-blueprint-2) -124.51%,
-		var(--surface-blueprint-2) 100%
+		var(--gray-600) -124.51%,
+		var(--gray-600) 100%
 	);
 	--checkbox-focus-shadow: 0 0 0 2px var(--outline-blueprint-2);
 
@@ -169,11 +169,12 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 		&.disabled-selected,
 		&:disabled:checked {
 			background-image: $check-icon-dark, var(--checkbox-disabled-gradient);
+			border:  var(--outline-gray-4);
 		}
 
 		&.disabled-deselected {
-			border: none;
-			background-color: var(--surface-blueprint-1);
+			border:  none;
+			background-color: var(--gray-700);
 		}
 	}
 
@@ -188,8 +189,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 
 	// grid
 	.grid-body .editable-row {
-		--control-bg: var(--surface-blueprint-1);
-		--input-disabled-bg: var(--surface-blueprint-2);
+		--control-bg: var(--gray-900);
+		--input-disabled-bg: var(--gray-800);
 	}
 
 	color-scheme: dark;
@@ -206,7 +207,7 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 
 	.modal,
 	.form-in-grid {
-		--control-bg: var(--surface-blueprint-1);
+		--control-bg: var(--gray-800);
 		--border-color: var(--outline-blueprint-1);
 	}
 
@@ -223,8 +224,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 			p,
 			u,
 			strong {
-				background-color: inherit !important;
-				color: inherit !important;
+				background-color: inherit;
+				color: inherit;
 			}
 		}
 	}
@@ -299,35 +300,4 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
         border-width: 1.2px;
     }
 }
-// Intrakore: thinner borders in dark mode
-.form-control,
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea {
-    border-width: 1.2px;
-}
-
-.frappe-control[data-fieldtype="Select"] {
-    select.form-control {
-        border-width: 1.2px;
-    }
-}
-// Intrakore: Quill border thinner in dark mode
-.ql-toolbar.ql-snow,
-.ql-container.ql-snow {
-    border-color: var(--outline-blueprint-1);
-    border-width: 1.2px;
-	.ql-container.ql-bubble {
-    border-color: var(--outline-blueprint-1);
-    border-width: 1.2px;
-}
-}	
 }

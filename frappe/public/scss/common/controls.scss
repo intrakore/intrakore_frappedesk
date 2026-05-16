@@ -259,9 +259,9 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-	border: 1.5px solid var(--outline-blueprint-4);
+	border: 1px solid var(--outline-gray-4);
 	background-color: var(--surface-white);
-	color: var(--ink-gray-8);
+	color: var(--ink-gray-9);
 	border-radius: var(--border-radius);
 	transition: border-color 0.15s ease, background-color 0.15s ease,
 		box-shadow 0.15s ease;
@@ -271,20 +271,20 @@ textarea {
 	}
 
 	&:hover:not(:disabled):not(:focus) {
-		border-color: var(--outline-blueprint-3);
+		border-color: var(--outline-gray-5);
 		background-color: var(--surface-white);
 	}
 
 	&:focus {
 		outline: none;
 		background-color: var(--surface-white);
-		border-color: var(--outline-blueprint-2);
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		border-color: var(--outline-gray-5);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	&:focus-visible {
 		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	&:disabled,
@@ -303,21 +303,21 @@ textarea {
 // Outline variant
 .form-control-outline,
 [data-variant="outline"] {
-	border-color: var(--outline-blueprint-2);
+	border-color: var(--outline-gray-4);
 	background-color: var(--surface-white);
 
 	&:hover:not(:disabled):not(:focus) {
-		border-color: var(--outline-blueprint-3);
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		border-color: var(--outline-gray-5);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	&:focus {
-		border-color: var(--outline-blueprint-2);
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		border-color: var(--outline-gray-5);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	&:focus-visible {
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	&:disabled {
@@ -409,21 +409,20 @@ textarea {
 	}
 }
 
-// Frappe Select dropdown
 .frappe-control[data-fieldtype="Select"] {
 	select.form-control {
-		border: 1.5px solid var(--outline-blueprint-4);
+		border: 1px solid var(--outline-gray-4);
 		background-color: var(--surface-white);
 		color: var(--ink-gray-8);
 
 		&:hover:not(:disabled) {
-			border-color: var(--outline-blueprint-2);
-			background-color: var(--surface-blueprint-2);
+			border-color: var(--outline-gray-5);
+			background-color: var(--surface-gray-1);
 		}
 
 		&:focus {
-			border-color: var(--outline-blueprint-2);
-			box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+			border-color: var(--outline-gray-5);
+			box-shadow: 0 0 0 2px var(--outline-gray-3);
 			background-color: var(--surface-white);
 		}
 	}
@@ -972,7 +971,7 @@ input[type="range"] {
 
 hr,
 .divider {
-	border-color: var(--outline-blueprint-2);
+	border-color: var(--outline-gray-3);
 	border-top-width: 1px;
 }
 
@@ -1192,7 +1191,7 @@ textarea.form-control {
 
 	.duration-input:focus {
 		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+		box-shadow: 0 0 0 2px var(--outline-gray-3);
 	}
 
 	.duration-label {

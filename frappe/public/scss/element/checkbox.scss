@@ -61,8 +61,8 @@ input[type="checkbox"] {
 	// border-outline-blueprint-1 bg-surface-blueprint-2
 	&.disabled-deselected,
 	&:disabled {
-		background-color: var(--surface-blueprint-2);
-		border: 0.5px solid var(--outline-blueprint-1);
+		background-color: var(--surface-gray-4);
+		border: 0.5px solid var(--outline-gray-4);
 		box-shadow: inset 0px 1px 7px rgba(0, 0, 0, 0.1);
 		pointer-events: none;
 	}
@@ -70,9 +70,9 @@ input[type="checkbox"] {
 	// Disabled checked — muted Blueprint
 	&.disabled-selected,
 	&:disabled:checked {
-		background-color: var(--surface-blueprint-3);
+		background-color: var(--surface-gray-4);
 		background-image: $check-icon;
-		background-size: 57%;
+		background-size: 60%;
 		box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 		border: none;
 		pointer-events: none;
@@ -170,8 +170,8 @@ label.switch {
 		}
 
 		&:disabled {
-			background-color: var(--surface-blueprint-1);
-			border-color: var(--outline-blueprint-2);
+			background-color: var(--disabled-control-bg);
+			border-color: var(--dark-border-color);
 		}
 
 		&:disabled:checked {

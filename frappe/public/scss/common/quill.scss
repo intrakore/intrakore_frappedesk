@@ -3,7 +3,7 @@
 
 .ql-toolbar.ql-snow,
 .ql-container.ql-snow {
-	border-color: var(--outline-blueprint-2);
+	border-color: var(--outline-gray-4);
 	font-family: inherit;
 }
 
@@ -351,18 +351,4 @@
 .mention-link::before {
 	display: none;
 }
-.ql-bubble .ql-editor {
-    min-height: 100px;
-    max-height: 300px;
-    border-radius: var(--border-radius-sm);
-    border: none !important;
-    outline: none !important;
-    background-color: transparent !important;
-    .ql-code-block-container {
-        @extend .ql-code-block-container;
-    }
-}
-	.ql-container.ql-bubble {
-    border: 1.5px solid var(--outline-blueprint-3)!important;
-    border-radius: var(--border-radius)!important;
-}	
+	
