@@ -252,7 +252,7 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 .indicator.blue {
 	&::before,
 	&::after {
-		background: var(--ink-blueprint-3);
+		background: var(--surface-blue-2);
 	}
 }
 
@@ -261,6 +261,31 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 .indicator-pill-round.blue {
 	background: var(--surface-blue-2);
 	color: var(--ink-blue-4);
+
+	&::before,
+	&::after {
+		background: var(--ink-blue-4);
+	}
+}
+
+.indicator-pill.blue.solid,
+.indicator-pill-right.blue.solid,
+.indicator-pill-round.blue.solid {
+	background: var(--surface-blue-4);
+	color: var(--ink-blue-1);
+
+	&::before,
+	&::after {
+		background: var(--ink-blue-1);
+	}
+}
+
+.indicator-pill.blue.outline,
+.indicator-pill-right.blue.outline,
+.indicator-pill-round.blue.outline {
+	background: transparent;
+	color: var(--ink-blue-4);
+	border: 1px solid var(--outline-blue-2);
 
 	&::before,
 	&::after {
