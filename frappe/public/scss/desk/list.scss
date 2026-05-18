@@ -221,10 +221,6 @@
 
 // ============================================================
 // LIST HEADER ROW
-// From ListHeader.vue:    bg-surface-blueprint-2
-// From ListHeaderItem.vue: text-ink-blueprint-4
-// "6 of 6" activity:      ink-blueprint-4
-// "ID" sort label:        ink-blueprint-4
 // ============================================================
 .list-row-head {
 	@extend .list-row;
@@ -234,7 +230,7 @@
 	height: var(--list-row-height);
 	padding-inline: var(--padding-sm);
 
-	// All header column labels → Blueprint
+
 	.list-row-col,
 	.list-subject {
 		color: var(--list-header-text);
@@ -254,7 +250,12 @@
 	// Sort label spans in other columns
 	.level-item[data-sort-by] {
 		color: var(--ink-blueprint-4);
+    
+    &:hover {
+        text-decoration: underline;
+    	}
 	}
+	
 
 	.checkbox-actions {
 		display: none;
@@ -266,14 +267,15 @@
 		height: var(--list-row-height);
 		border-left: none;
 		color: var(--ink-blueprint-4);
-
-		&:hover {
-			background-color: var(--list-header-bg);
-		}
 	}
+	
 
 	&:hover .level-right {
 		background-color: var(--list-header-bg);
+	}
+	.level-item.list-liked-by-me {
+    color: var(--ink-blueprint-4) !important;
+    --icon-stroke: var(--ink-blueprint-4);
 	}
 
 	// Activity text in header → Blueprint
@@ -281,6 +283,8 @@
 		color: var(--ink-blueprint-4);
 	}
 }
+
+
 
 // ============================================================
 // LIST ROW COLUMNS
@@ -296,7 +300,7 @@
 	& > [data-sort-by]:hover {
 		cursor: pointer;
 		text-decoration: underline;
-		color: var(--ink-blueprint-3);
+		color: var(--ink-blueprint-4);
 	}
 }
 

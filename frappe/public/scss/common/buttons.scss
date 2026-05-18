@@ -221,28 +221,33 @@
 // Primary light — kept for backward compat
 .btn-primary-light {
 	@include button-variant(
-		$background: $gray-300,
-		$border: $gray-800,
-		$hover-background: $gray-200,
-		$hover-border: $gray-300,
-		$active-background: $gray-300,
-		$active-border: $gray-200
+		$background: #D6D9FF,
+		$border: #B9BEFE,
+		$hover-background: #B9BEFE,
+		$hover-border: #8D95F6,
+		$active-background: #B9BEFE,
+		$active-border: #8D95F6
 	);
-	color: var(--surface-blueprint-5);
+	color: var(--ink-blueprint-4);
 	&:hover,
 	&:active {
-		color: var(--surface-blueprint-5);
+		color: var(--ink-blueprint-4);
 	}
 	&:focus {
 		box-shadow: var(--focus-default);
 	}
 }
-
-// Dark mode overrides
 [data-theme="dark"] {
 	.btn-primary-light {
-		background-color: var(--bg-dark-gray);
+		background-color: var(--surface-blueprint-2);
+		color: var(--ink-blueprint-4);
 		box-shadow: none;
+
+		&:hover,
+		&:active {
+			background-color: var(--surface-blueprint-3);
+			color: var(--ink-blueprint-4);
+		}
 	}
 
 	.btn.btn-primary {

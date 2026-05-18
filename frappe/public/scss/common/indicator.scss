@@ -259,12 +259,12 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 .indicator-pill.blue,
 .indicator-pill-right.blue,
 .indicator-pill-round.blue {
-	background: var(--surface-blueprint-2);
-	color: var(--ink-blueprint-4);
+	background: var(--surface-blue-2);
+	color: var(--ink-blue-4);
 
 	&::before,
 	&::after {
-		background: var(--ink-blueprint-4);
+		background: var(--ink-blue-4);
 	}
 }
 
@@ -357,18 +357,18 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 .indicator-pill.grey,
 .indicator-pill-right.grey,
 .indicator-pill-round.grey {
-	background: var(--surface-gray-2);
-	color: var(--ink-gray-6);
+	background: var(--surface-blueprint-2);
+	color: var(--ink-gray-7);
 
 	&::before,
 	&::after {
-		background: var(--ink-gray-6);
+		background: var(--ink-gray-7);
 	}
 }
 
 .indicator-pill.gray.solid,
 .indicator-pill.grey.solid {
-	background: var(--surface-gray-7);
+	background: var(--surface-blueprint-7);
 	color: var(--ink-white);
 
 	&::before,

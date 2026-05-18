@@ -61,22 +61,17 @@
 	// Intrakore: progress fill → Blueprint
 	--progress-bar-bg: var(--surface-blueprint-5);
 
-	// ============================================================
-	// LIST — from ListView Vue files
-	// ListHeader.vue:    bg-surface-blueprint-2 header row
-	// ListHeaderItem.vue: text-ink-blueprint-4 column labels
-	//                     group-hover:bg-blueprint-400 resize handle
-	// ListRow.vue:       hover:bg-surface-gray-1 / bg-surface-gray-2 selected
-	// ListGroupHeader.vue: hover:bg-surface-blueprint-1 toggle btn
-	//                      text-ink-blueprint-3 chevron icon
-	// ============================================================
+	//list changes
+	//list header
+	//list row
+
 	--list-row-height: 30px;
 	--list-checkbox-padding: calc(
 		(var(--list-row-height) - var(--checkbox-size)) / 2
 	);
 
 	// List header background — from ListHeader.vue: bg-surface-blueprint-2
-	--list-header-bg: var(--surface-blueprint-2);
+	--list-header-bg: var(--surface-white);
 
 	// List header text — from ListHeaderItem.vue: text-ink-blueprint-4
 	--list-header-text: var(--ink-blueprint-4);
