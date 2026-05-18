@@ -268,15 +268,27 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 	}
 }
 
-.indicator-pill.blue.solid,
-.indicator-pill-right.blue.solid,
-.indicator-pill-round.blue.solid {
-	background: var(--surface-blue-4);
-	color: var(--ink-blue-1);
+.indicator-pill.blue,
+.indicator-pill-right.blue,
+.indicator-pill-round.blue {
+	background: var(--surface-blue-1);
+	color: var(--ink-blue-3);
 
 	&::before,
 	&::after {
-		background: var(--ink-blue-1);
+		background: var(--ink-blue-3);
+	}
+}
+
+.indicator-pill.blue.solid,
+.indicator-pill-right.blue.solid,
+.indicator-pill-round.blue.solid {
+	background: var(--surface-blue-3);
+	color: var(--surface-blue-1);
+
+	&::before,
+	&::after {
+		background: var(--surface-blue-1);
 	}
 }
 
@@ -284,12 +296,12 @@ $indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, dar
 .indicator-pill-right.blue.outline,
 .indicator-pill-round.blue.outline {
 	background: transparent;
-	color: var(--ink-blue-4);
-	border: 1px solid var(--outline-blue-2);
+	color: var(--ink-blue-3);
+	border: 1px solid var(--ink-blue-2);
 
 	&::before,
 	&::after {
-		background: var(--ink-blue-4);
+		background: var(--ink-blue-3);
 	}
 }
 
