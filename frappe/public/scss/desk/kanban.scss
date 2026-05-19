@@ -1,5 +1,5 @@
 :root {
-	--kanban-column-bg: var(--gray-100);
+	--kanban-column-bg: var(--surface-blueprint-1);
 	--kanban-card-bg: var(--card-bg);
 	--kanban-card-hover-bg: var(--card-bg);
 	--kanban-new-card-bg: var(--gray-200);
@@ -27,6 +27,7 @@
 	}
 
 	.kanban-column {
+		background-color: var(--kanban-column-bg) !important;
 		@include transition();
 
 		flex: 1 0 260px;
@@ -334,7 +335,7 @@
 			@include get_textstyle("base", "regular");
 
 			&:hover {
-				background-color: var(--kanban-column-bg);
+				background-color: var(--kanban-column-bg)!important;
 			}
 		}
 	}
