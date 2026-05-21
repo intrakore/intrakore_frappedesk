@@ -17,6 +17,10 @@ a {
 	cursor: pointer;
 }
 
+.timeline-content a {
+	color: var(--text-color);
+}
+
 a,
 a:hover,
 a:active,
@@ -321,7 +325,7 @@ select.input-xs {
     max-height: 500px;
     overflow: auto;
     background-color: var(--popover-bg);
-    border: 1px solid var(--outline-blueprint-1);
+    border: 1px solid var(--outline-gray-3);
 
     .dropdown-item {
         border-radius: 8px;

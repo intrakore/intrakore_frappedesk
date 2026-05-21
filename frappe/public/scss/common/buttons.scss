@@ -69,11 +69,72 @@
 	}
 }
 
-// Secondary / default — blueprint subtle
-// bg-surface-blueprint-2, text-ink-blueprint-4
-// hover: bg-surface-blueprint-3, active: bg-surface-blueprint-4
+// Secondary / default 
+
 .btn.btn-secondary,
 .btn.btn-default {
+	background-color: var(--surface-white);
+	font-size: 14px;
+	line-height: 1.15;
+	letter-spacing: 0.02em;
+	font-weight: 420;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border: 1px solid var(--outline-blueprint-4);
+	color: var(--ink-blueprint-4);
+
+	&:hover:not(:disabled) {
+		border-color: var(--outline-blueprint-3);
+		color: var(--ink-blueprint-4);
+	}
+
+	&:active:not(:disabled) {
+		border-color: var(--outline-blueprint-4);
+		background-color: var(--surface-blueprint-3);
+		color: var(--ink-blueprint-4);
+	}
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 2px var(--outline-blueprint-2);
+	}
+
+	&:disabled,
+	&.disabled {
+		background-color: var(--surface-blueprint-1);
+		border-color: var(--outline-blueprint-1);
+		color: var(--ink-gray-4);
+		pointer-events: none;
+	}
+
+	// Icon-only buttons — no border
+	&.btn-icon,
+	&.icon-btn,
+	&.btn-xs.btn-icon {
+		border: none !important;
+		background-color: transparent;
+		padding: 0;
+
+		&:hover:not(:disabled) {
+			background-color: var(--surface-blueprint-1);
+			border: none !important;
+		}
+	}
+
+	.icon {
+		fill: var(--icon-fill);
+		stroke: currentColor;
+		color: inherit;
+	}
+
+	.es-icon {
+		fill: currentColor;
+		stroke-width: 0;
+	}
+}
+
+// Subtle — blueprint tinted background, no border
+.btn.btn-subtle {
 	background-color: var(--surface-blueprint-2);
 	color: var(--ink-blueprint-4);
 
@@ -100,17 +161,17 @@
 		color: var(--ink-gray-4);
 		pointer-events: none;
 	}
-	// Force icon fill to match button text color
-    .icon {
-    fill: var(--icon-fill);
-    stroke: currentColor;
-    color: inherit;
-}
 
-.es-icon {
-    fill: currentColor;
-    stroke-width: 0;
-}
+	.icon {
+		fill: var(--icon-fill);
+		stroke: currentColor;
+		color: inherit;
+	}
+
+	.es-icon {
+		fill: currentColor;
+		stroke-width: 0;
+	}
 }
 
 // Ghost — transparent bg, blueprint text
@@ -137,45 +198,6 @@
 
 	&:disabled,
 	&.disabled {
-		color: var(--ink-gray-4);
-		pointer-events: none;
-	}
-}
-
-// Outline — border-outline-blueprint-2, text-ink-blueprint-4
-// hover: border-outline-blueprint-3
-// active: border-outline-blueprint-4, bg-surface-blueprint-3
-.btn-outline {
-	background-color: var(--surface-white);
-	font-size: 14px;
-	line-height: 1.15;
-	letter-spacing: 0.02em;
-	font-weight: 420;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	border: 1px solid var(--outline-blueprint-2);
-	color: var(--ink-blueprint-4);
-
-	&:hover:not(:disabled) {
-		border-color: var(--outline-blueprint-3);
-		color: var(--ink-blueprint-4);
-	}
-
-	&:active:not(:disabled) {
-		border-color: var(--outline-blueprint-4);
-		background-color: var(--surface-blueprint-3);
-		color: var(--ink-blueprint-4);
-	}
-
-	&:focus-visible {
-		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-blueprint-2);
-	}
-
-	&:disabled,
-	&.disabled {
-		background-color: var(--surface-blueprint-1);
-		border-color: var(--outline-blueprint-1);
 		color: var(--ink-gray-4);
 		pointer-events: none;
 	}

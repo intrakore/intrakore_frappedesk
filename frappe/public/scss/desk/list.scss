@@ -327,8 +327,6 @@ $level-margin-right: 8px;
 
 // ============================================================
 // PAGING AREA
-// Active (btn-info + disabled): white bg, Blueprint border + text
-// Inactive: Blueprint-2 tint bg, hover Blueprint-3
 // ============================================================
 .list-paging-area,
 .footnote-area {
@@ -338,30 +336,38 @@ $level-margin-right: 8px;
 		border: 1px solid var(--outline-blueprint-1);
 		border-radius: var(--border-radius);
 
-		// Active selected page size
+		.btn-paging {
+			border: none !important;
+			border-radius: 0 !important;
+			background-color: transparent;
+
+			&:first-child {
+				border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+			}
+
+			&:last-child {
+				border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+			}
+		}
+
 		.btn-paging.btn-info {
 			&:not(:first-child) {
 				border-left: 1px solid var(--outline-blueprint-1);
 			}
-			background-color: var(--surface-white) !important;
-			color: var(--ink-blueprint-4) !important;
+			background-color: var(--surface-blueprint-5) !important;
+			color: var(--ink-blueprint-1) !important;
 			font-weight: var(--weight-medium);
 		}
 
-		// Inactive page size buttons
 		.btn-paging:not(.btn-info) {
-			background-color: var(--surface-blueprint-2);
+			background-color: var(--surface-white);
 			color: var(--ink-gray-6);
 
 			&:hover {
-				background-color: var(--surface-blueprint-3);
+				background-color: var(--surface-blueprint-1);
 				color: var(--ink-gray-7);
 			}
 		}
-	}
-
-	.btn-paging {
-		background-color: var(--control-bg);
 	}
 }
 
@@ -581,14 +587,13 @@ input.list-header-checkbox {
 	}
 
 	.sort-selector {
-		.btn-group {
-			margin: var(--margin-xs) 0 var(--margin-xs) var(--margin-xs);
-
-			.btn:focus {
-				z-index: unset;
-			}
-		}
-	}
+        .btn-group {
+margin: var(--margin-xs) 0 var(--margin-xs) var(--margin-xs);
+.btn:focus {
+z-index: unset;
+            }
+        }
+    }
 }
 
 .restricted-button {
@@ -742,5 +747,17 @@ input.list-header-checkbox {
 				}
 			}
 		}
+	}
+}
+.page-form .input-with-feedback.form-control.input-xs  {
+	border: 1px solid var(--outline-blueprint-4);
+
+	&:hover:not(:disabled):not(:focus) {
+		border-color: var(--outline-blueprint-3);
+	}
+
+	&:focus {
+		border-color: var(--outline-blueprint-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 }
