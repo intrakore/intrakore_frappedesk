@@ -118,6 +118,10 @@
 			background-color: var(--surface-white);
 			box-shadow: none;
 		}
+		&:hover .level-right {
+        background-color: var(--surface-white) !important;
+        box-shadow: none !important;
+    	}
 	}
 }
 
