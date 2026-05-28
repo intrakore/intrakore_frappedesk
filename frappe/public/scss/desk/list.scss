@@ -115,13 +115,9 @@
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 
 		.level-right {
-			background-color: var(--surface-white);
-			box-shadow: none;
+			background-color: var(--surface-white)!important;
+			box-shadow: none!important;
 		}
-		&:hover .level-right {
-        background-color: var(--surface-white) !important;
-        box-shadow: none !important;
-    	}
 	}
 }
 
@@ -196,7 +192,7 @@
 
 	&:hover:not(.list-row-head) {
 		.level-right {
-			box-shadow: -5px 0px 5px var(--highlight-color);
+			box-shadow: none;
 		}
 	}
 
