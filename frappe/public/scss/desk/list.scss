@@ -93,13 +93,58 @@
 		padding: 0;
 	}
 
-	// From ListRow.vue: hover:bg-surface-gray-1
 	&:hover {
-		background-color: var(--list-row-hover-bg);
+		background-color: transparent;
 	}
 
 	&:hover .level-right {
-		background-color: var(--list-row-hover-bg);
+		background-color: var(--surface-white);
+	}
+}
+
+// Card treatment — data rows only (excludes header container)
+.list-row-container:not(:has(.list-row-head)) {
+	border: 1px solid var(--outline-gray-1);
+	border-radius: 8px;
+	margin-bottom: 6px;
+	background-color: var(--surface-white);
+
+	&:hover {
+		border-color: var(--outline-blueprint-3);
+		background-color: var(--surface-white);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+		.level-right {
+			background-color: var(--surface-white);
+			box-shadow: none;
+		}
+	}
+}
+
+// Selected row — Blueprint tint
+.list-row-container:not(:has(.list-row-head)).row-selected {
+	background-color: var(--surface-blueprint-1);
+	border-color: var(--outline-blueprint-2);
+
+	&:hover {
+		border-color: var(--outline-blueprint-3);
+	}
+}
+
+// Dark mode
+[data-theme='dark'] {
+	.list-row-container:not(:has(.list-row-head)) {
+		background-color: var(--surface-gray-2);
+		border-color: var(--outline-gray-2);
+
+		&:hover {
+			border-color: var(--outline-blueprint-3);
+			background-color: var(--surface-gray-2);
+		}
+
+		.list-row .level-right {
+			background-color: var(--surface-gray-2);
+		}
 	}
 }
 
@@ -139,7 +184,7 @@
 // level-right: original highlight-color (near-white neutral)
 // ============================================================
 .list-row {
-	border-bottom: 1px solid var(--outline-gray-1);
+	border-bottom: none;
 	cursor: pointer;
 	transition: color 0.2s;
 	-webkit-transition: color 0.2s;
@@ -161,7 +206,7 @@
 		position: sticky;
 		right: 0;
 		background-color: var(--bg-color);
-		border-left: 2px solid var(--highlight-color);
+		border-left: none;
 		padding: 9px 10px;
 	}
 
