@@ -237,16 +237,9 @@ select.form-control {
 	}
 }
 
-// ============================================================
 // TEXT INPUT / TEXTAREA
 // From TextInput.vue + Textarea.vue:
-//   subtle: border-outline-blueprint-1 bg-surface-blueprint-1
-//   hover:  border-outline-blueprint-2 bg-surface-blueprint-2
-//   focus:  bg-surface-white border-outline-blueprint-2
-//   focus-visible: ring-2 ring-outline-blueprint-1
-//   disabled: bg-surface-gray-1 border-transparent
-// ============================================================
-
+//   outline (default): border-outline-gray-4 bg-surface-white
 .form-control,
 input[type="text"],
 input[type="number"],
@@ -271,20 +264,20 @@ textarea {
 	}
 
 	&:hover:not(:disabled):not(:focus) {
-		border-color: var(--outline-gray-5);
+		border-color: var(--outline-blueprint-3);
 		background-color: var(--surface-white);
 	}
 
 	&:focus {
 		outline: none;
 		background-color: var(--surface-white);
-		border-color: var(--outline-gray-5);
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		border-color: var(--outline-blueprint-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 
 	&:focus-visible {
 		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 
 	&:disabled,
@@ -307,17 +300,17 @@ textarea {
 	background-color: var(--surface-white);
 
 	&:hover:not(:disabled):not(:focus) {
-		border-color: var(--outline-gray-5);
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		border-color: var(--outline-blueprint-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 
 	&:focus {
-		border-color: var(--outline-gray-5);
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		border-color: var(--outline-blueprint-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 
 	&:focus-visible {
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 
 	&:disabled {

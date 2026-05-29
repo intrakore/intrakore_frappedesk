@@ -10,7 +10,7 @@
 	border-radius: var(--border-radius-md);
 	color: var(--text-color);
 	min-height: 75px;
-	background-color: var(--subtle-accent);
+	background-color: transparent;
 	overflow-y: hidden;
 }
 
@@ -21,7 +21,7 @@
 
 // Grid heading row — from ListHeader.vue: bg-surface-blueprint-2
 .grid-heading-row {
-	border-bottom: 1px solid var(--table-border-color);
+	border-bottom: 1px solid var(--outline-gray-1);
 	// Intrakore: header text → Blueprint
 	color: var(--ink-blueprint-4);
 	@include get_textstyle("sm", "regular");
@@ -32,7 +32,7 @@
 
 	.grid-row {
 		// Intrakore: header row bg → Blueprint tint
-		background-color: var(--surface-blueprint-2);
+		background-color: var(--surface-gray-1);
 		border-top-left-radius: var(--border-radius-md);
 		border-top-right-radius: var(--border-radius-md);
 
@@ -71,7 +71,7 @@
 		height: 32px;
 		padding: 4px 8px !important;
 		// Intrakore: sticky header cells → Blueprint tint
-		background-color: var(--surface-blueprint-2);
+		background-color: var(--surface-gray-1);
 	}
 
 	.row-check,
@@ -180,7 +180,7 @@
 
 .grid-empty {
 	height: 43px;
-	background-color: var(--subtle-accent);
+	background-color: var(--surface-white);
 	display: flex;
 	vertical-align: middle;
 }
@@ -269,7 +269,7 @@
 
 	.col {
 		padding: var(--grid-padding);
-		border-right: 1px solid var(--table-border-color);
+		border-right: none;
 	}
 
 	.sticky-grid-col {
@@ -279,7 +279,7 @@
 }
 
 .grid-body {
-	background-color: var(--subtle-accent);
+	background-color: transparent;
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
 	margin-bottom: -1px;
@@ -325,10 +325,9 @@
 
 		.form-control,
 		.ql-editor {
-			border-radius: 0px;
-			border: 0px;
-			padding-top: 10px;
-			padding-bottom: calc(var(--padding-md) - 3px);
+			border-radius: 8px;
+			border: 1px solid var(--outline-gray-4);
+			padding: 8px 10px;
 			height: auto;
 		}
 
@@ -418,6 +417,37 @@
 	.grid-static-col:has(.awesomplete > ul:not([hidden])) {
 		z-index: 2;
 	}
+}
+// ============================================================
+// CHILD TABLE — first data column rounded border all states
+// ============================================================
+.grid-body .rows .grid-row .grid-static-col:nth-child(3) {
+	padding: 6px 8px;
+	overflow: visible;
+	box-sizing: border-box;
+}
+
+.grid-body .rows .grid-row .grid-static-col:nth-child(3) .static-area {
+	border: 1px solid var(--outline-gray-4);
+	border-radius: 8px;
+	padding: 4px 8px;
+	min-height: 30px;
+	background-color: var(--surface-white);
+}
+
+.grid-body .rows .grid-row .grid-static-col:nth-child(3) .field-area {
+	padding: 0 2px;
+}
+
+.grid-body .rows .grid-row .grid-static-col:nth-child(3) .field-area .input-with-feedback.form-control {
+	border-radius: 8px !important;
+	width: calc(100% - 4px) !important;
+	box-sizing: border-box;
+}
+
+.grid-body .rows .grid-row .grid-static-col:nth-child(3) .field-area .input-with-feedback.form-control:focus {
+	border-color: var(--outline-blueprint-3) !important;
+	box-shadow: 0 0 0 2px var(--outline-blueprint-1) !important;
 }
 
 @media (max-width: 767px) {
@@ -768,7 +798,7 @@
 }
 
 .column-limit-reached {
-	background-color: var(--subtle-accent);
+	background-color: var(--surface-white);
 	border-radius: var(--border-radius-md);
 	border: 1px solid var(--table-border-color);
 	overflow-y: hidden;
