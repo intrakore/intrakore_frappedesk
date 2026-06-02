@@ -93,7 +93,7 @@ $disabled-input-height: 22px;
 	--toast-bg: var(--modal-bg);
 	--popover-bg: var(--surface-modal);
 
-	--awesomplete-hover-bg: var(--surface-blueprint-2);
+	--awesomplete-hover-bg: var(--gray-100);
 
 	// Button Colors
 	--btn-primary: var(--surface-blueprint-5);
@@ -111,7 +111,7 @@ $disabled-input-height: 22px;
 	--scrollbar-track-color: var(--gray-200);
 
 	--shadow-inset: inset 0px -1px 0px var(--gray-300);
-	--border-color: var(--outline-gray-3);
+	--border-color: var(--outline-gray-2);
 	--dark-border-color: var(--gray-600);
 	--table-border-color: var(--gray-200);
 	--highlight-color: var(--gray-50);
@@ -139,8 +139,8 @@ $disabled-input-height: 22px;
 	--checkbox-size: 14px;
 	--checkbox-color: var(--neutral-black);
 
-	--checkbox-focus-shadow: 0 0 0 2px var(--outline-blueprint-1);
-	--checkbox-gradient: linear-gradient(180deg, var(--surface-blueprint-5) -124.51%, var(--surface-blueprint-5) 100%);
+	--checkbox-focus-shadow: 0 0 0 2px var(--gray-300);
+	--checkbox-gradient: linear-gradient(180deg, var(--gray-800) -124.51%, var(--gray-800) 100%);
 	--checkbox-disabled-gradient: linear-gradient(
 		180deg,
 		var(--disabled-control-bg) -124.51%,

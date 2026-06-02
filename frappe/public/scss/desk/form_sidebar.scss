@@ -572,14 +572,27 @@
 	}
 
 	.form-stats-likes {
-		.liked-by {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 28px;
-			height: 28px;
-		}
-	}
+    .liked-by {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+    }
+
+    // ← add this
+    .btn.icon-btn,
+    .btn.btn-default.icon-btn,
+    .btn.p-0 {
+        border: none !important;
+        background-color: transparent;
+
+        &:hover:not(:disabled) {
+            background-color: var(--surface-gray-1);
+            border: none !important;
+        }
+    }
+}
 
 	.liked-by-popover {
 		max-width: 240px;

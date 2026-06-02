@@ -19,7 +19,7 @@ body {
 	--checkbox-right-margin: 8px;
 	.label-area {
 		@include get_textstyle("sm", "medium");
-		color: var(--text-color);
+		color: var(--text-muted);
 	}
 	.input-area,
 	.disp-area {
@@ -178,61 +178,4 @@ body {
 			0px 0px 1.5px 0px rgba(0, 0, 0, 0.18);
 	}
 	min-width: calc(var(--sm-width) - 360px);
-}
-
-// ============================================================
-// INTRAKORE GLOBAL BRAND OVERRIDES
-// Links → Blueprint, breadcrumbs from Breadcrumbs.vue
-// ============================================================
-
-a,
-a:link {
-	color: var(--ink-blueprint-3);
-	text-decoration: none;
-
-	&:hover {
-		color: var(--ink-blueprint-4);
-		text-decoration: underline;
-	}
-
-	&:focus-visible {
-		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-blueprint-2);
-		border-radius: 3px;
-	}
-}
-
-// Breadcrumbs — from Breadcrumbs.vue
-// Non-active: text-ink-blueprint-2, hover: text-ink-blueprint-3
-// Active (last item): text-ink-blueprint-3
-// Separator: text-ink-blueprint-2
-.breadcrumb-section,
-.breadcrumb {
-	.breadcrumb-item a,
-	.breadcrumb-item button {
-		color: var(--ink-blueprint-2);
-		font-weight: 500;
-
-		&:hover {
-			color: var(--ink-blueprint-3);
-			text-decoration: none;
-		}
-
-		&:focus-visible {
-			outline: none;
-			box-shadow: 0 0 0 2px var(--outline-blueprint-2);
-			border-radius: 4px;
-		}
-	}
-
-	.breadcrumb-item.active a,
-	.breadcrumb-item:last-child a,
-	.breadcrumb-item:last-child button {
-		color: var(--ink-blueprint-3);
-	}
-
-	.breadcrumb-separator,
-	.separator {
-		color: var(--ink-blueprint-2);
-	}
 }

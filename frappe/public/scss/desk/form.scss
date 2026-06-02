@@ -213,8 +213,8 @@
 			padding-right: 0;
 
 			.ql-editor {
-				background-color: var(--control-bg) !important;
-				border: 1px solid var(--border-color);
+				background-color: transparent !important;
+				border: 1px solid var(--outline-gray-4);
 				min-height: 24px;
 				padding: 6px;
 			}
@@ -519,8 +519,7 @@
 	background-color: var(--card-bg);
 	z-index: 5;
 	transition: 0.5s top;
-	// Intrakore: Blueprint border
-	border-bottom: 1px solid var(--outline-gray-3);
+	border-bottom: 1px solid var(--border-color);
 	border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 
 	.form-tabs {
@@ -533,9 +532,8 @@
 			@include get_textstyle("base", "regular");
 
 			.nav-link {
-				// Intrakore: inactive → ink-blueprint-2
-				color: var(--ink-blueprint-2);
-				font-weight: var(--weight-semibold); 
+				color: var(--text-light);
+				font-weight: var(--weight-medium); 
 				padding: 10px 0;
 				margin: 0 var(--margin-md);
 				background-color: var(--card-bg);
@@ -546,22 +544,21 @@
 				transition: color 0.2s ease;
 
 				&:hover {
-					color: var(--ink-blueprint-3);
+					color: var(--ink-gray-7);
 					text-decoration: none;
 				}
 
-				// Intrakore: active → Blueprint border + text
 				&.active {
 					font-weight: var(--weight-semibold); 
 					// Blueprint active indicator
-					border-bottom: 2px solid var(--surface-blueprint-8);
-					color: var(--ink-blueprint-4);
+					border-bottom: 2px solid var(--text-color);
+					color: var(--text-neutral);
 					padding-bottom: 8px;
 				}
 
 				&:focus-visible {
 					outline: none;
-					box-shadow: 0 0 0 2px var(--outline-blueprint-2);
+					font-weight: 600;
 					border-radius: 4px;
 				}
 			}

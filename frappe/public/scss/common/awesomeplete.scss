@@ -30,7 +30,7 @@
 		border-radius: var(--border-radius);
 		box-shadow: var(--shadow-md);
 		// Intrakore: Blueprint border
-		border: 1px solid var(--outline-blueprint-1);
+		border: 1px solid var(--border-color);
 		left: 0;
 		margin: 0;
 		padding: var(--padding-xs);
@@ -78,7 +78,7 @@
 			// Intrakore: hover/selected → Blueprint tint
 			&:hover,
 			&[aria-selected="true"] {
-				background-color: var(--surface-blueprint-1);
+				background-color: var(--awesomplete-hover-bg);
 				color: var(--text-color);
 			}
 		}

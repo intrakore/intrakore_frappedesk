@@ -31,7 +31,7 @@ body.modal-open[style^="padding-right"] {
 
 	.modal-content {
 		// Intrakore: Blueprint border instead of generic border-color
-		border-color: var(--outline-blueprint-1);
+		border-color: var(--border-color);
 		border-radius: var(--border-radius-lg);
 		background-color: var(--surface-modal);
 	}
@@ -45,7 +45,7 @@ body.modal-open[style^="padding-right"] {
 		background: inherit;
 		padding: var(--padding-sm) var(--padding-md);
 		// Intrakore: Blueprint border
-		border-bottom: 1px solid var(--outline-blueprint-1);
+		border-bottom: 1px solid var(--border-color);
 
 		.modal-title {
 			font-weight: 500;
@@ -110,7 +110,7 @@ body.modal-open[style^="padding-right"] {
 		padding: var(--padding-md);
 		justify-content: space-between;
 		// Intrakore: Blueprint border
-		border-top: 1px solid var(--outline-blueprint-1);
+		border-top: 1px solid var(--border-color);
 
 		button {
 			box-shadow: none;
@@ -389,11 +389,11 @@ body.modal-open[style^="padding-right"] {
 	.modal {
 		.modal-content {
 			background-color: var(--surface-modal);
-			border-color: var(--outline-blueprint-1);
+			border-color: var(--border-color);
 		}
 
 		.modal-header {
-			border-bottom-color: var(--outline-blueprint-1);
+			border-bottom-color: var(--border-color);
 
 			.modal-title {
 				color: var(--ink-gray-9);
@@ -401,7 +401,7 @@ body.modal-open[style^="padding-right"] {
 		}
 
 		.modal-footer {
-			border-top-color: var(--outline-blueprint-1);
+			border-top-color: var(--border-color);
 		}
 	}
 }

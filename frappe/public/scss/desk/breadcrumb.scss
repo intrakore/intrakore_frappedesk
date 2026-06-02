@@ -1,7 +1,7 @@
 .breadcrumb {
     padding-left: 0;
     padding-right: 0;
-    background-color: transparent;        // was white — use transparent
+    background-color: white;        // was white — use transparent
 }
 
 .navbar-breadcrumbs {
@@ -11,13 +11,13 @@
 
     a {
         text-decoration: none;
-        color: var(--ink-blueprint-2);    // was --ink-gray-5
+        color: var(--ink-gray-5);    
         font-weight: var(--weight-medium);
         font-size: var(--text-lg);
         letter-spacing: get_letterspacing("sm", "regular");
 
         &:hover {
-            color: var(--ink-blueprint-3); // was --ink-gray-7
+            color: var(--ink-gray-7); // was --ink-gray-7
         }
 
         &:before {
@@ -25,7 +25,7 @@
             display: inline-block;
             margin-left: 6px;
             margin-right: 6px;
-            color: var(--ink-blueprint-2); // was --ink-gray-4
+            color: var(--ink-gray-4); // was --ink-gray-4
             font-size: 14px;
             line-height: 1.15;
             letter-spacing: 0.02em;
@@ -39,26 +39,10 @@
         }
     }
 
-    // Home icon — override icon-stroke to Blueprint
-li:first-child a {
-    --icon-stroke: var(--ink-blueprint-2);
-
-    &:before {
-        content: none;    // ← add this
-    }
-
-    .icon {
-        stroke: var(--ink-blueprint-2);
-    }
-
-    &:hover {
-        --icon-stroke: var(--ink-blueprint-3);
-
-        .icon {
-            stroke: var(--ink-blueprint-3);
-        }
-    }
-}
+   li:first-child a:before {
+		// no angle before first item
+		content: none;
+	}
     li.disabled {
         a {
             pointer-events: none;
@@ -67,6 +51,6 @@ li:first-child a {
 
     li:last-child > a {
         font-weight: var(--weight-medium);
-        color: var(--ink-blueprint-3) !important;  // was --ink-gray-9
+        color: var(--ink-gray-9) ;  // was --ink-gray-9
     }
 }

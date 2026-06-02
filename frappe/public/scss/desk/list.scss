@@ -54,7 +54,7 @@
 	min-height: calc(100vh - 200px);
 
 	.list-skeleton-box {
-		background-color: var(--surface-blueprint-1);
+		background-color: var(--surface-gray-1);
 		height: 100%;
 		border-radius: var(--border-radius);
 	}
@@ -134,16 +134,20 @@
 // Dark mode
 [data-theme='dark'] {
 	.list-row-container:not(:has(.list-row-head)) {
-		background-color: var(--surface-gray-2);
+		background-color: transparent;
 		border-color: var(--outline-gray-2);
 
 		&:hover {
 			border-color: var(--outline-blueprint-3);
 			background-color: var(--surface-gray-2);
+			.level-right {
+				background-color: var(--surface-gray-2) !important;  // ← add
+				box-shadow: none !important;                           // ← add
+			}
 		}
 
 		.list-row .level-right {
-			background-color: var(--surface-gray-2);
+			background-color: transparent;
 		}
 	}
 }
@@ -238,7 +242,7 @@
 		}
 
 		.frappe-timestamp {
-			font-size: var(--text-xs);
+			font-size: var(--text-md);
 			white-space: nowrap;
 		}
 
@@ -320,7 +324,7 @@
 	}
 	.level-item.list-liked-by-me {
     color: var(--ink-blueprint-4) !important;
-    --icon-stroke: var(--ink-blueprint-4);
+    --icon-stroke: var(--text-color);
 	}
 
 	// Activity text in header → Blueprint
@@ -339,7 +343,7 @@
 	margin-right: 15px;
 
 	a {
-		color: var(--text-muted);
+		color: var(--text-color);
 	}
 
 	& > [data-sort-by]:hover {
@@ -375,10 +379,10 @@ $level-margin-right: 8px;
 // ============================================================
 .list-paging-area,
 .footnote-area {
-	border-top: 1px solid var(--outline-blueprint-1);
+	border-top: 1px solid var(--border-color);
 
 	.btn-group {
-		border: 1px solid var(--outline-blueprint-1);
+		border: 1px solid var(--border-color);
 		border-radius: var(--border-radius);
 
 		.btn-paging {
@@ -397,10 +401,10 @@ $level-margin-right: 8px;
 
 		.btn-paging.btn-info {
 			&:not(:first-child) {
-				border-left: 1px solid var(--outline-blueprint-1);
+				border-left: 1px solid var(--border-color);
 			}
 			background-color: var(--surface-blueprint-5) !important;
-			color: var(--ink-blueprint-1) !important;
+			color: var(--ink-blueprint-1) ;
 			font-weight: var(--weight-medium);
 		}
 
@@ -792,17 +796,5 @@ z-index: unset;
 				}
 			}
 		}
-	}
-}
-.page-form .input-with-feedback.form-control.input-xs  {
-	border: 1px solid var(--outline-blueprint-4);
-
-	&:hover:not(:disabled):not(:focus) {
-		border-color: var(--outline-blueprint-3);
-	}
-
-	&:focus {
-		border-color: var(--outline-blueprint-3);
-		box-shadow: 0 0 0 2px var(--outline-blueprint-1);
 	}
 }

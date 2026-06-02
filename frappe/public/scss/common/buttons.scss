@@ -23,6 +23,12 @@
 		height: var(--btn-height);
 		padding: 0px;
 		@extend .center-content;
+		border: 1px solid var(--outline-gray-4);   // ← gray border
+	--icon-stroke: var(--text-color);
+
+	&:hover:not(:disabled) {
+		border-color: var(--outline-blueprint-2);
+	}
 		&.btn-default,
 		&.btn-secondary {
 			min-width: 28px;
@@ -80,18 +86,18 @@
 	font-weight: 420;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
-	border: 1px solid var(--outline-blueprint-4);
-	color: var(--ink-blueprint-4);
+	border: 1px solid var(--outline-gray-4);
+	color: var(--text-color);
 
 	&:hover:not(:disabled) {
 		border-color: var(--outline-blueprint-3);
-		color: var(--ink-blueprint-4);
+		color: var(--text-color);
 	}
 
 	&:active:not(:disabled) {
 		border-color: var(--outline-blueprint-4);
 		background-color: var(--surface-blueprint-3);
-		color: var(--ink-blueprint-4);
+		color: var(--text-color);
 	}
 
 	&:focus-visible {
@@ -101,36 +107,13 @@
 
 	&:disabled,
 	&.disabled {
-		background-color: var(--surface-blueprint-1);
-		border-color: var(--outline-blueprint-1);
+		background-color: var(--surface-gray-1);
+		border-color: var(--outline-gray-3);
 		color: var(--ink-gray-4);
 		pointer-events: none;
 	}
 
-	// Icon-only buttons — no border
-	&.btn-icon,
-	&.icon-btn,
-	&.btn-xs.btn-icon {
-		border: none !important;
-		background-color: transparent;
-		padding: 0;
-
-		&:hover:not(:disabled) {
-			background-color: var(--surface-blueprint-1);
-			border: none !important;
-		}
-	}
-
-	.icon {
-		fill: var(--icon-fill);
-		stroke: currentColor;
-		color: inherit;
-	}
-
-	.es-icon {
-		fill: currentColor;
-		stroke-width: 0;
-	}
+	
 }
 
 // Subtle — blueprint tinted background, no border
@@ -269,13 +252,6 @@
 		&:active {
 			background-color: var(--surface-blueprint-3);
 			color: var(--ink-blueprint-4);
-		}
-	}
-
-	.btn.btn-primary {
-		&:active {
-			background-color: var(--surface-blueprint-7) !important;
-			color: var(--ink-blueprint-1) !important;
 		}
 	}
 }

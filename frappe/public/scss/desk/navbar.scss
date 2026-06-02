@@ -1,8 +1,7 @@
 .navbar {
 	height: $navbar-height;
 	background: var(--navbar-bg);
-	// Intrakore: Blueprint border
-	border-bottom: 1px solid var(--outline-blueprint-1);
+	border-bottom: 1px solid var(--border-color);;
 	padding: 0;
 
 	.navbar-brand {
@@ -85,13 +84,12 @@
 			box-shadow: var(--awesomebar-shadow),
 				0 0 0 2px var(--outline-blueprint-1);
 			background-color: var(--awesomebar-focus-bg);
-			border-color: var(--outline-blueprint-2);
+			border-color: var(--border-color);
 		}
 
 		ul {
 			border: none;
-			// Intrakore: Blueprint border
-			border-top: 1px solid var(--outline-blueprint-1);
+			border-top: 1px solid var(--border-color);
 			border-radius: 0 0 var(--border-radius) var(--border-radius);
 			box-shadow: var(--awesomebar-shadow);
 		}
@@ -120,7 +118,7 @@
 		ul {
 			position: relative;
 			background-color: transparent;
-			border: none;
+			border: var(--border-color);
 			border-radius: unset;
 			box-shadow: none;
 			margin-top: 12px;
@@ -135,7 +133,7 @@
 		width: 100%;
 		height: 1px;
 		// Intrakore: Blueprint divider
-		background-color: var(--outline-blueprint-1);
+		background-color: var(--gray-600);
 		position: absolute;
 		top: 40px;
 		left: 0px;
@@ -163,7 +161,7 @@
 		// Intrakore: keyboard shortcut chips → Blueprint tint
 		.help-item {
 			background-color: var(--surface-blueprint-1);
-			border: 1px solid var(--outline-blueprint-1);
+			border: 1px solid var(--border-color);
 			padding: 3px;
 			display: flex;
 			font-size: x-small;

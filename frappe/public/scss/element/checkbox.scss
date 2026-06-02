@@ -8,9 +8,7 @@ input[type="checkbox"] {
 	margin-right: var(--checkbox-right-margin) !important;
 	background-repeat: no-repeat;
 	background-position: center;
-
-	// Intrakore: Blueprint border at rest
-	border: 1px solid var(--outline-blueprint-4);
+	border: 1px solid var(--text-color);
 	box-sizing: border-box;
 	border-radius: 4px;
 
@@ -18,6 +16,7 @@ input[type="checkbox"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+
 	-webkit-print-color-adjust: exact;
 	color-adjust: exact;
 
@@ -25,71 +24,44 @@ input[type="checkbox"] {
 		margin-right: 0 !important;
 	}
 
-	// Hover — from Checkbox.vue: hover:border-outline-blueprint-3
-	&:hover:not(:disabled):not(:checked) {
-		border-color: var(--outline-blueprint-3);
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-	}
-
-	// Checked — Blueprint fill, white checkmark
 	&:checked {
-		background-color: var(--surface-blueprint-5);
+		background-color: var(--gray-800);
 		background-image: $check-icon, var(--checkbox-gradient);
 		background-size: 57%, 100%;
 		box-shadow: none;
 		border: none;
 	}
 
-	// Active — from Checkbox.vue: active:bg-surface-blueprint-1
-	&:active:not(:disabled) {
-		background-color: var(--surface-blueprint-1);
-		border-color: var(--outline-blueprint-4);
-	}
-
-	// Focus — from Checkbox.vue: focus-visible:ring-outline-blueprint-2
 	&:focus {
-		outline: none;
-		box-shadow: var(--checkbox-focus-shadow); // 0 0 0 2px outline-blueprint-1
+		outline: none; // Prevent browser behavior
+		box-shadow: var(--checkbox-focus-shadow);
 	}
 
-	&:focus-visible {
-		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-blueprint-2);
-	}
-
-	// Disabled unchecked — from Checkbox.vue:
-	// border-outline-blueprint-1 bg-surface-blueprint-2
 	&.disabled-deselected,
 	&:disabled {
-		background-color: var(--surface-gray-4);
-		border: 0.5px solid var(--outline-gray-4);
+		background-color: var(--disabled-control-bg);
 		box-shadow: inset 0px 1px 7px rgba(0, 0, 0, 0.1);
+		border: 0.5px solid var(--dark-border-color);
 		pointer-events: none;
 	}
 
-	// Disabled checked — muted Blueprint
 	&.disabled-selected,
 	&:disabled:checked {
-		background-color: var(--surface-gray-4);
+		background-color: var(--text-muted);
 		background-image: $check-icon;
-		background-size: 60%;
+		background-size: 57%;
 		box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 		border: none;
 		pointer-events: none;
 	}
 }
 
-// Padding wrapper hover/focus — from Checkbox.vue padding prop
-// hover:bg-surface-blueprint-2
-// focus-within:bg-surface-blueprint-3 focus-within:ring-outline-blueprint-2
-.checkbox-wrapper-padding {
-	&:hover:not(.disabled) {
-		background-color: var(--surface-blueprint-2);
-	}
-	&:focus-within:not(.disabled) {
-		background-color: var(--surface-blueprint-3);
-		box-shadow: 0 0 0 2px var(--outline-blueprint-2);
-	}
+.checkbox .multicheck-warning-icon {
+	margin-left: 4px !important;
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+	line-height: 1;
 }
 
 /* The switch - the box around the slider */
@@ -132,9 +104,8 @@ input[type="checkbox"] {
 	transition: 0.4s;
 }
 
-// Switch checked — Blueprint fill
 input:checked + .slider {
-	background-color: var(--surface-blueprint-5);
+	background-color: var(--invert-neutral);
 }
 
 input:focus + .slider {
@@ -158,28 +129,4 @@ label.switch {
 
 .slider.round:before {
 	border-radius: 50%;
-}
-
-// Dark mode
-[data-theme="dark"] {
-	input[type="checkbox"] {
-		border-color: var(--outline-blueprint-4);
-
-		&:checked {
-			background-color: var(--surface-blueprint-5);
-		}
-
-		&:disabled {
-			background-color: var(--disabled-control-bg);
-			border-color: var(--dark-border-color);
-		}
-
-		&:disabled:checked {
-			background-color: var(--surface-blueprint-3);
-		}
-	}
-
-	input:checked + .slider {
-		background-color: var(--surface-blueprint-5);
-	}
 }

@@ -11,14 +11,14 @@ body {
 	background-color: var(--bg-color);
 }
 
-// Intrakore: links → Blueprint
 a {
-	color: var(--ink-blueprint-3);
+	color: $text-color;
 	cursor: pointer;
-}
+	&:hover {
+        color: var(--text-color);  // stays same color on hover
+        text-decoration: underline;
+    }
 
-.timeline-content a {
-	color: var(--text-color);
 }
 
 a,
@@ -30,6 +30,12 @@ a:focus,
 .btn:active,
 .btn:focus {
 	outline: 0;
+}
+a:focus-visible,
+.btn:focus-visible,
+.btn-reset:focus-visible {
+	box-shadow: var(--focus-default);
+	outline: none;
 }
 
 a.grey,
@@ -252,7 +258,7 @@ h2 {
 
 		&:nth-child(2) {
 			// Intrakore: btn-group border → Blueprint
-			border-left: 1px solid var(--outline-blueprint-1);
+			border-left: 1px solid var(--border-color);
 		}
 	}
 }
@@ -371,7 +377,7 @@ select.input-xs {
     }
 
     a:active {
-        --icon-stroke: #{$component-active-color};
+        --icon-stroke: var(--text-color);
     }
 }
 
@@ -404,7 +410,7 @@ select.input-xs {
 kbd {
 	// Intrakore: kbd chip → Blueprint tint
 	background-color: var(--surface-blueprint-1);
-	border: 1px solid var(--outline-blueprint-1);
+	border: 1px solid var(--border-color);
 	font-family: var(--font-stack);
 	color: var(--ink-blueprint-4);
 	line-height: 0.9em;
@@ -692,18 +698,18 @@ details > summary:focus {
 .page-head {
     .btn.text-muted,
     .btn.icon-btn {
-        --icon-stroke: var(--ink-blueprint-3);
-        color: var(--ink-blueprint-3) !important;
+        --icon-stroke: var(--text-color);
+        color: var(--text-color);
 
         .icon {
-            color: var(--ink-blueprint-3) !important;
-            fill: var(--icon-fill) !important;        // respects --icon-fill: transparent
-            stroke: var(--ink-blueprint-3) !important;
+            color: var(--text-color);
+            fill: var(--icon-fill);
+            stroke: var(--text-color);
         }
 
         .es-icon {
-            fill: var(--ink-blueprint-3) !important;  // es-icon must stay filled
-            stroke-width: 0 !important;
+            fill: var(--text-color);
+            stroke-width: 0;
         }
     }
 }

@@ -1,3 +1,5 @@
+$check-icon: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+
 $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 
 [data-theme="dark"] {
@@ -8,14 +10,14 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	// Type Colors
 	--text-neutral: var(--gray-50);
 	--text-dark: var(--gray-900);
-	--text-muted: var(--gray-400);
+	--text-muted: var(--gray-200);
 	--text-light: var(--gray-300);
 	--text-color: var(--gray-50);
 	--heading-color: var(--gray-50);
 
 	// SVG Colors
 	--icon-fill: transparent;
-	--icon-stroke: var(--gray-300);
+	--icon-stroke: var(--gray-50);
 
 	// Error colors
 	--error-bg: var(--red-800);
@@ -32,24 +34,23 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--disabled-text-color: var(--gray-400);
 	--disabled-control-bg: var(--gray-800);
 	// Intrakore: control bg → dark Blueprint tint
-	--control-bg: transparent;
+	--control-bg: var(--gray-800);
 	--control-bg-on-gray: var(--surface-gray-3);
 	--awesomebar-focus-bg: var(--control-bg);
-	--awesomplete-hover-bg: var(--surface-blueprint-2);
+	--awesomplete-hover-bg: var(--gray-600);
 	--modal-bg: var(--gray-900);
 	--toast-bg: var(--modal-bg);
-	--popover-bg: var(--surface-gray-3);
+	--popover-bg: var(--bg-color);
 
-	// Button Colors — from Button.vue dark mode blueprint
-	// surface-blueprint-* dark values from colors.js
-	--btn-default-bg: var(--surface-blueprint-2);
+	// Button Colors 
+	--btn-default-bg: var(--gray-800);
 	--btn-default-hover-bg: var(--surface-blueprint-3);
 	--btn-ghost-hover-bg: var(--surface-blueprint-2);
 	// Intrakore: primary → Sky #5ABCF9 (dark mode primary per brand)
 	--btn-primary: var(--surface-blueprint-5);
 
 	// Border Colors
-	--border-primary: var(--outline-blueprint-2);
+	--border-primary:  var(--gray-200);
 
 	// Background Text Color Pairs — Blueprint overrides
 	--bg-blue: var(--surface-blueprint-2);
@@ -103,12 +104,12 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--scrollbar-track-color: var(--gray-700);
 
 	// Timeline — Blueprint tinted in dark
-	--timeline-badge-color: var(--ink-blueprint-2);
-	--timeline-badge-bg: var(--surface-blueprint-1);
+	--timeline-badge-color: var(--gray-500);
+	--timeline-badge-bg: var(--gray-900);
 
 	--shadow-inset: var(--fg-color);
-	--border-color: var(--outline-gray-3);
-	--dark-border-color: var(--outline-gray-4);
+	--border-color: var(--gray-600);
+	--dark-border-color: var(--gray-600);
 	--table-border-color: var(--border-color);
 	--highlight-color: var(--gray-700);
 	--yellow-highlight-color: var(--yellow-700);
@@ -118,8 +119,8 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--placeholder-color: var(--ink-gray-5); 
 
 	// Intrakore: highlight shadow → dark Blueprint
-	--highlight-shadow: 1px 1px 10px var(--surface-blueprint-1),
-		0px 0px 4px var(--outline-blueprint-2);
+	--highlight-shadow: 1px 1px 10px var(--gray-800),
+		0px 0px 4px var(--gray-600);
 
 	--shadow-base: 0px 4px 8px rgba(114, 176, 233, 0.06),
 		0px 0px 4px rgba(112, 172, 228, 0.12);
@@ -131,13 +132,13 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 
 	// sidebar toggle
 	.page-title .sidebar-toggle-btn {
-		--icon-stroke: var(--ink-blueprint-2);
+		--icon-stroke:  var(--gray-50);
 	}
 
 	// progress bar — Blueprint in dark
-	--progress-bar-bg: var(--surface-blueprint-5);
+	--progress-bar-bg: var(--gray-300);
 	.progress {
-		background-color: var(--surface-blueprint-1);
+		background-color: var(--gray-700);
 	}
 
 	// input
@@ -147,33 +148,28 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	--checkbox-color: var(--neutral-white);
 	--checkbox-gradient: linear-gradient(
 		180deg,
-		var(--surface-blueprint-5) -124.51%,
-		var(--surface-blueprint-5) 100%
+		var(--neutral-white) -124.51%,
+		var(--neutral-white) 100%
 	);
 	--checkbox-disabled-gradient: linear-gradient(
 		180deg,
-		var(--gray-600) -124.51%,
-		var(--gray-600) 100%
+		var(--gray-200) -124.51%,
+		var(--gray-200) 100%
 	);
-	--checkbox-focus-shadow: 0 0 0 2px var(--outline-blueprint-2);
+	--checkbox-focus-shadow: var(--focus-default);
 
-	input[type="checkbox"] {
-		border-color: var(--outline-blueprint-2);
-
+			input[type="checkbox"] {
 		&:checked {
 			background-image: $check-icon-dark, var(--checkbox-gradient);
-			background-color: var(--surface-blueprint-5);
-			border: none;
 		}
 
 		&.disabled-selected,
 		&:disabled:checked {
 			background-image: $check-icon-dark, var(--checkbox-disabled-gradient);
-			border:  var(--outline-gray-4);
 		}
 
 		&.disabled-deselected {
-			border:  none;
+			border: none;
 			background-color: var(--gray-700);
 		}
 	}
@@ -208,12 +204,12 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
 	.modal,
 	.form-in-grid {
 		--control-bg: var(--gray-800);
-		--border-color: var(--outline-blueprint-1);
+		--border-color: var(--gray-600);
 	}
 
 	.print-format {
 		--text-color: var(--gray-900);
-		--border-color: var(--outline-blueprint-1)
+		--border-color: var(--gray-100);
 	}
 
 	.ql-editor {

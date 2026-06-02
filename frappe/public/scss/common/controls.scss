@@ -283,8 +283,8 @@ textarea {
 	&:disabled,
 	&[disabled] {
 		background-color: var(--surface-gray-1);
-		border-color: transparent;
-		color: var(--ink-gray-5);
+		border-color: var(--outline-gray-3);
+		color: var(--ink-gray-4);
 		cursor: not-allowed;
 
 		&::placeholder {
@@ -314,7 +314,7 @@ textarea {
 	}
 
 	&:disabled {
-		border-color: var(--outline-gray-2);
+		border-color: var(--outline-gray-3);
 		background-color: var(--surface-gray-1);
 	}
 }
@@ -415,7 +415,7 @@ textarea {
 
 		&:focus {
 			border-color: var(--outline-gray-5);
-			box-shadow: 0 0 0 2px var(--outline-gray-3);
+			box-shadow: 0 0 0 2px var(--outline-gray-2);
 			background-color: var(--surface-white);
 		}
 	}
@@ -795,17 +795,15 @@ a.progress-small {
 }
 
 // ============================================================
-// TAB BUTTONS — from TabButtons.vue
-//   wrapper: bg-surface-blueprint-2 ring-outline-blueprint-1
-//   checked: bg-surface-white text-ink-blueprint-4 border-outline-blueprint-1
+// TAB BUTTONS
 // ============================================================
 
 .tab-buttons-group,
 .btn-group[role="group"] {
-	background-color: var(--surface-blueprint-2);
+	background-color: var(--surface-gray-2);
 	border-radius: var(--border-radius-md);
 	padding: 1px;
-	box-shadow: 0 0 0 1px var(--outline-blueprint-1) inset;
+	box-shadow: 0 0 0 1px var(--outline-gray-1) inset;
 
 	.tab-btn {
 		background: transparent;
@@ -815,9 +813,9 @@ a.progress-small {
 		&.active,
 		&[data-state="checked"] {
 			background-color: var(--surface-white);
-			color: var(--ink-blueprint-4);
+			color: var(--text-neutral);
 			box-shadow: var(--shadow-sm);
-			border: 1px solid var(--outline-blueprint-1);
+			border: 1px solid var(--border-color);
 		}
 
 		&:hover:not(.active):not([data-state="checked"]) {
@@ -833,11 +831,7 @@ a.progress-small {
 }
 
 // ============================================================
-// TABS — from Tabs.vue
-//   text: text-ink-blueprint-2
-//   hover: text-ink-blueprint-3
-//   active: text-ink-blueprint-4
-//   indicator: bg-surface-blueprint-8
+// TABS 
 // ============================================================
 
 .nav-tabs,
@@ -845,14 +839,14 @@ a.progress-small {
 	.nav-item {
 		.nav-link,
 		.tab-link {
-			color: var(--ink-blueprint-2);
+			color: var(--text-light);
 			font-weight: 400;
 			transition: color 0.3s ease;
 			border: none;
 			border-bottom: 2px solid transparent;
 
 			&:hover {
-				color: var(--ink-blueprint-3);
+				color: var(--ink-gray-7);
 				text-decoration: none;
 			}
 		}
@@ -860,14 +854,14 @@ a.progress-small {
 		&.active .nav-link,
 		.nav-link.active,
 		.tab-link[data-state="active"] {
-			color: var(--ink-blueprint-4);
-			border-bottom-color: var(--surface-blueprint-8);
+			color: var(--text-neutral);
+			border-bottom-color: var(--text-color);
 			font-weight: 420;
 		}
 	}
 
 	.tab-indicator {
-		background-color: var(--surface-blueprint-8);
+		background-color: var(--text-color);
 		border-radius: 99px;
 	}
 }
@@ -964,7 +958,7 @@ input[type="range"] {
 
 hr,
 .divider {
-	border-color: var(--outline-gray-3);
+	border-color: var(--outline-gray-2);
 	border-top-width: 1px;
 }
 
@@ -1184,7 +1178,7 @@ textarea.form-control {
 
 	.duration-input:focus {
 		outline: none;
-		box-shadow: 0 0 0 2px var(--outline-gray-3);
+		box-shadow: 0 0 0 2px var(--outline-gray-2);
 	}
 
 	.duration-label {
