@@ -1415,9 +1415,9 @@
 html[data-theme='dark'] .desktop-wrapper {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 120% 45% at 50% 100%, rgba(0, 15, 206, 0.60) 0%, rgba(112, 92, 255, 0.45) 40%, rgba(165, 143, 255, 0.25) 60%, transparent 80%),
-    radial-gradient(ellipse 60% 30% at 20% 100%, rgba(0, 15, 206, 0.40) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 30% at 80% 100%, rgba(112, 92, 255, 0.40) 0%, transparent 70%),
-    var(--surface-black);
+    radial-gradient(ellipse 120% 45% at 50% 100%, rgba(0, 15, 206, 0.35) 0%, rgba(112, 92, 255, 0.25) 40%, rgba(165, 143, 255, 0.15) 60%, transparent 80%),
+    radial-gradient(ellipse 60% 30% at 20% 100%, rgba(0, 15, 206, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 30% at 80% 100%, rgba(112, 92, 255, 0.22) 0%, transparent 70%),
+    #1A1A1A !important;
   background-position: center bottom;
 }
