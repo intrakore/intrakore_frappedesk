@@ -25,12 +25,12 @@ body {
 .for-signup,
 .for-email-login {
 	.page-card {
-		padding: 45px 10px;
-		background-color: #fff;
+		padding: 32px 10px;
+		background-color: var(--surface-white);
 		max-width: 400px;
 		margin: 0 auto;
-		border-radius: var(--border-radius-md);
-		border: 1px solid var(--border-color);
+		border-radius: 0;
+		border: none;
 
 		form {
 			max-width: 320px;
@@ -56,11 +56,24 @@ body {
 			input[type="text"],
 			input[type="email"],
 			input[type="password"] {
-				border: none;
+				border: 1px solid var(--border-color);
 				color: var(--text-color);
 				@include get_textstyle("base", "regular");
-				background-color: var(--control-bg);
+				background-color: #F9F9F9;
 				margin-bottom: 1rem;
+				&:focus {
+				box-shadow: 0 0 0 1px #8D95F6;
+				border-color: #8D95F6;
+				outline: none;
+			}
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus {
+				-webkit-box-shadow: 0 0 0px 1000px #F9F9F9 inset !important;
+				-webkit-text-fill-color: var(--text-color) !important;
+				border-color: var(--border-color);
+			}
 			}
 
 			&.invalid {
@@ -133,7 +146,7 @@ body {
 
 				&:hover {
 					border: none;
-					background: var(--gray-300);
+					background: var(--surface-blueprint-2);
 				}
 			}
 
@@ -219,4 +232,73 @@ body {
 		letter-spacing: 0.01em;
 		color: var(--text-color);
 	}
+}
+
+// Intrakore — App name on login
+
+.page-card-head h4 {
+  font-size: 0;
+  
+  &::after {
+    content: 'Login to Intrakore';
+    font-size: var(--text-xl);
+  }
+}
+
+
+// Intrakore — Split login layout
+
+@include media-breakpoint-up(md) {
+  body {
+  background-color: var(--surface-white) !important;
+  min-height: 100vh;
+
+  &::after {
+  content: '';
+  display: block;
+  width: 50%;
+  min-height: 100vh;
+  background: url('/assets/frappe/images/intrakore_login.png') no-repeat center center / cover;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+}
+
+.page-content-wrapper {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F9F9F9;
+  overflow-y: auto;
+}
+
+  .for-login,
+  .for-forgot,
+  .for-signup,
+  .for-email-login,
+  .for-login-with-email-link {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .web-header {
+  display: none !important;
+}
+.navbar.navbar-light {
+  display: none !important;
+}
+
+  .web-footer {
+    display: none !important;
+  }
 }
