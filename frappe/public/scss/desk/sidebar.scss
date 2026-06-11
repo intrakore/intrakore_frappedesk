@@ -363,7 +363,7 @@
 
 // ── Section divider ────────────────────────────────────────────
 .sidebar-section-divider {
-	border-top: 1px solid var(--outline-blueprint-2);
+	border-top: 1px solid var(--outline-white);
 	width: 100%;
 }
 
@@ -399,7 +399,7 @@
 	width: 100%;
 
 	& .sidebar-item-label {
-		color: var(--ink-blueprint-2) !important;
+		color: var(--ink-white) !important;
 	}
 }
 
