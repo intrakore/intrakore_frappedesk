@@ -40,7 +40,7 @@ $modal-md: 575px;
 $modal-sm: 450px;
 
 // Intrakore: links → Blueprint
-$link-color: #2A37F4;
+$link-color: var(--text-color);
 $link-hover-color: #000FCC;
 
 // input
@@ -52,7 +52,7 @@ $input-box-shadow: none;
 // Intrakore: input focus border → Blueprint
 $input-focus-border-color: #8D95F6;
 $input-border-radius: var(--border-radius);
-$input-btn-focus-width: 2px;
+$input-btn-focus-width: 1px;
 
 // dropdown
 $dropdown-color: var(--text-color);
