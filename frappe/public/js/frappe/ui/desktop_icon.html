@@ -1,18 +1,15 @@
 <a class="desktop-icon" data-id="{{ icon.label}}"  data-logo="{{ icon.logo_url }}" data-icon="{{ icon.icon }}" data-type="{{ icon.type }}" style="text-decoration:none">
-    {% if(icon.icon_image) { %}
-        <div class="icon-container">
-            <img class="app-icon" src="{{ icon.icon_image }}" alt="{{ icon.label }}" />
-        </div>
-    {% } else if(frappe.utils.get_desktop_icon(icon.label, frappe.boot.desktop_icon_style ) && icon.icon_type != "Folder") { %}
+    {% if(frappe.utils.get_desktop_icon(icon.label, frappe.boot.desktop_icon_style ) && icon.icon_type != "Folder") %}
         <div class="icon-container">
             <img class="app-icon" src="{{ frappe.utils.get_desktop_icon(icon.label, frappe.boot.desktop_icon_style) }}" alt="{{ icon.label }}" />
         </div>
-    {% } else if (icon.logo_url) { %}
+    {% else if (icon.logo_url || icon.icon_image) { %}
         <div class="icon-container">
-            <img class="app-icon" src="{{ icon.logo_url }}" alt="{{ icon.label }}" />
+            <img class="app-icon" src="{{ icon.logo_url || icon.icon_image }}" alt="{{ icon.label }}" />
         </div>
     {% } else if (icon.icon_type == "Folder") { %}
         <div class="icon-container folder-icon">
+
         </div>
     {% } else { %}
             {%= frappe.utils.desktop_icon(icon.label, icon.bg_color || "gray") %}
