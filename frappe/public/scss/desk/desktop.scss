@@ -1422,46 +1422,32 @@ html[data-theme='dark'] .desktop-wrapper {
   background-position: center bottom;
 }
 // Intrakore — Custom workspace icons
-.desktop-icon[data-id="Finance"] .icon-container {
-  background-image: url('/assets/frappe/images/finance.png');
-  background-size: cover;
-  background-position: center;
+.desktop-icon[data-id="Finance"] .icon-container,
+.desktop-icon[data-id="Operations"] .icon-container,
+.desktop-icon[data-id="Sales"] .icon-container,
+.desktop-icon[data-id="People"] .icon-container {
+  width: 60px;
+  height: 60px;
   border-radius: 12px;
+  overflow: hidden;
 
   img.app-icon {
     display: none;
   }
+}
+
+.desktop-icon[data-id="Finance"] .icon-container {
+  background: url('/assets/frappe/images/finance.png') no-repeat center center / cover;
 }
 
 .desktop-icon[data-id="Operations"] .icon-container {
-  background-image: url('/assets/frappe/images/operations.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-
-  img.app-icon {
-    display: none;
-  }
+  background: url('/assets/frappe/images/operations.png') no-repeat center center / cover;
 }
 
 .desktop-icon[data-id="Sales"] .icon-container {
-  background-image: url('/assets/frappe/images/sales.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-
-  img.app-icon {
-    display: none;
-  }
+  background: url('/assets/frappe/images/sales.png') no-repeat center center / cover;
 }
 
 .desktop-icon[data-id="People"] .icon-container {
-  background-image: url('/assets/frappe/images/People.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-
-  img.app-icon {
-    display: none;
-  }
+  background: url('/assets/frappe/images/People.png') no-repeat center center / cover;
 }
