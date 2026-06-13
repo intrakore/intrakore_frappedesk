@@ -605,17 +605,3 @@ frappe.get_module = function (m, default_module) {
 	return module;
 };
 
-
-// Intrakore — force custom workspace icons from boot data
-$(document).on('page-change', function() {
-    setTimeout(function() {
-        document.querySelectorAll('.desktop-icon').forEach(el => {
-            let label = el.dataset.id;
-            let icon = frappe.boot.desktop_icons.find(i => i.label === label);
-            if(icon && icon.icon_image) {
-                let img = el.querySelector('img.app-icon');
-                if(img) img.src = icon.icon_image;
-            }
-        });
-    }, 500);
-});
