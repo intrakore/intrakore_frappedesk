@@ -308,7 +308,7 @@ frappe.Application = class Application {
 			"update_user_permissions",
 			frappe.utils.debounce(() => {
 				frappe.defaults.update_user_permissions();
-			}, 500)
+			}, 0)
 		);
 	}
 
