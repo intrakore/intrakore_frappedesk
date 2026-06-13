@@ -1421,3 +1421,47 @@ html[data-theme='dark'] .desktop-wrapper {
     #1A1A1A !important;
   background-position: center bottom;
 }
+// Intrakore — Custom workspace icons
+.desktop-icon[data-id="Finance"] .icon-container {
+  background-image: url('/assets/frappe/images/finance.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+  img.app-icon {
+    display: none;
+  }
+}
+
+.desktop-icon[data-id="Operations"] .icon-container {
+  background-image: url('/assets/frappe/images/operations.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+  img.app-icon {
+    display: none;
+  }
+}
+
+.desktop-icon[data-id="Sales"] .icon-container {
+  background-image: url('/assets/frappe/images/sales.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+  img.app-icon {
+    display: none;
+  }
+}
+
+.desktop-icon[data-id="People"] .icon-container {
+  background-image: url('/assets/frappe/images/People.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+  img.app-icon {
+    display: none;
+  }
+}
