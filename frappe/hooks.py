@@ -31,6 +31,7 @@ app_include_js = [
 	"controls.bundle.js",
 	"report.bundle.js",
 	"telemetry.bundle.js",
+	"/assets/frappe/js/desk_wizard.js"
 ]
 
 app_include_css = [
