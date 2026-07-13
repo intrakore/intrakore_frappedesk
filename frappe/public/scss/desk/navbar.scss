@@ -1,7 +1,7 @@
 .navbar {
 	height: $navbar-height;
 	background: var(--navbar-bg);
-	border-bottom: 1px solid var(--border-color);;
+	border-bottom: 1px solid var(--border-color);
 	padding: 0;
 
 	.navbar-brand {
@@ -53,13 +53,13 @@
 .search-bar {
 	max-width: 300px;
 	.desktop-navbar-modal-search {
-		border: 1.5px solid var(--outline-blueprint-4);   // visible default border
-        border-radius: var(--border-radius-lg);
-        &:hover {
-            box-shadow: 0 0 0 2px var(--outline-blueprint-1);
-            border-radius: var(--border-radius-lg);
-        }
-    }
+		border: 1.5px solid var(--outline-blueprint-4);
+		border-radius: var(--border-radius-lg);
+		&:hover {
+			box-shadow: 0 0 0 2px var(--outline-blueprint-1);
+			border-radius: var(--border-radius-lg);
+		}
+	}
 
 	svg {
 		stroke: var(--icon-stroke);
@@ -112,6 +112,30 @@
 		display: flex;
 	}
 
+	.awesomebar-input-row {
+		display: flex;
+		align-items: center;
+		border: 1px solid var(--outline-gray-4);
+		border-radius: var(--border-radius);
+		padding: 0 4px;
+		input {
+			flex: 1;
+			min-width: 0;
+			border: none;
+			box-shadow: none;
+		}
+	}
+
+	.awesomebar-search-icon {
+		display: flex;
+		align-items: center;
+		padding-left: 10px;
+		color: var(--text-muted);
+		flex-shrink: 0;
+		pointer-events: none;
+		padding-right: 2px;
+	}
+
 	.awesomplete {
 		width: 100%;
 
@@ -135,7 +159,7 @@
 		// Intrakore: Blueprint divider
 		background-color: var(--gray-600);
 		position: absolute;
-		top: 40px;
+		top: 50px;
 		left: 0px;
 		border-radius: 50%;
 	}
