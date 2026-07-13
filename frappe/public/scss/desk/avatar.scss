@@ -116,6 +116,16 @@
 	}
 }
 
+// Intrakore: added missing avatar-medium-2 variant (v16.26.3 core uses this class,
+// not present in original SCSS — was collapsing to near-0 size without explicit width/height)
+.avatar-medium-2 {
+	width: 32px;
+	height: 32px;
+	.standard-image {
+		@include get_textstyle("base", "regular");
+	}
+}
+
 .avatar-large {
 	width: 64px;
 	height: 64px;

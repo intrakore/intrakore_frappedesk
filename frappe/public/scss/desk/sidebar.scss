@@ -201,7 +201,14 @@
 		font-size: var(--text-sm);
 		display: flex;
 		align-items: center;
-		color: var(--ink-blueprint-1);
+		// Intrakore: reset native button background + fixed contrast
+		background: none;
+		border: none;
+		color: var(--ink-gray-6);
+
+		&:hover {
+			color: var(--ink-blueprint-4);
+		}
 
 		svg {
 			margin: 0px;
