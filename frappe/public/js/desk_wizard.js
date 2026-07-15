@@ -223,6 +223,53 @@ frappe.dom.set_style(`
         from { opacity: 0; transform: translateX(-32px); }
         to   { opacity: 1; transform: translateX(0); }
     }
+        /* ── Responsive: tablet ── */
+    @media (max-width: 768px) {
+        .desk-wizard-wrap {
+            padding: 16px 12px;
+        }
+        .wizard-progress-row {
+            gap: 10px;
+        }
+        .wizard-label {
+            display: none;
+        }
+        .wizard-steps {
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 8 0px;
+        }
+        .wizard-steps::-webkit-scrollbar {
+            display: none;
+        }
+        .wizard-circle {
+            width: 26px;
+            height: 26px;
+            font-size: 11px;
+        }
+    }
+
+    /* ── Responsive: mobile ── */
+    @media (max-width: 390px) {
+        .wizard-step-counter-top {
+            font-size: 12px;
+        }
+        .wizard-circle {
+            width: 24px;
+            height: 24px;
+        }
+            .wizard-steps {
+            padding: 8 0px;
+        }
+        .desk-wizard-footer-nav {
+            padding: 12px 12px;
+        }
+        .wizard-prev,
+        .wizard-next {
+            padding: 6px 14px;
+            font-size: 12px;
+        }
+    }
 `);
 
 // ─── FORM HOOK ────────────────────────────────────────────────────────────────
