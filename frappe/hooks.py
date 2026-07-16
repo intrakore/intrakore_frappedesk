@@ -31,7 +31,6 @@ app_include_js = [
 	"controls.bundle.js",
 	"report.bundle.js",
 	"telemetry.bundle.js",
-	"/assets/frappe/js/desk_wizard.js"
 ]
 
 app_include_css = [
@@ -229,6 +228,10 @@ scheduler_events = {
 		"45 0 * * *": [],
 		"0 */3 * * *": [
 			"frappe.search.sqlite_search.build_index_if_not_exists",
+		],
+		# Daily at 6:00 AM.
+		"0 6 * * *": [
+			"frappe.core.doctype.security_settings.security_settings_alert.check_security_txt_expiry",
 		],
 	},
 	"all": [
@@ -525,6 +528,8 @@ persistent_cache_keys = [
 	"monitor-transactions",
 	"rate-limit-counter-*",
 	"rl:*",
+	"concurrency:*",
+	"pulse-client:*",
 ]
 
 user_invitation = {
@@ -540,5 +545,6 @@ add_to_apps_screen = [
 		"logo": app_logo_url,
 		"title": app_title,
 		"route": app_home,
+		"has_permission": "frappe.permissions.check_app_permission",
 	}
 ]
