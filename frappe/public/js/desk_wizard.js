@@ -237,7 +237,7 @@ frappe.dom.set_style(`
         .wizard-steps {
             overflow-x: auto;
             scrollbar-width: none;
-            padding: 8 0px;
+            padding: 8px 0;
         }
         .wizard-steps::-webkit-scrollbar {
             display: none;
@@ -246,6 +246,10 @@ frappe.dom.set_style(`
             width: 26px;
             height: 26px;
             font-size: 11px;
+        }
+        .wizard-steps::before,
+        .wizard-steps::after {
+            top: 21px;
         }
     }
 
@@ -258,8 +262,12 @@ frappe.dom.set_style(`
             width: 24px;
             height: 24px;
         }
-            .wizard-steps {
-            padding: 8 0px;
+        .wizard-steps {
+            padding: 8px 0;
+        }
+        .wizard-steps::before,
+        .wizard-steps::after {
+            top: 20px;
         }
         .desk-wizard-footer-nav {
             padding: 12px 12px;
@@ -269,6 +277,47 @@ frappe.dom.set_style(`
             padding: 6px 14px;
             font-size: 12px;
         }
+    }
+    /* ── Dark mode overrides ── */
+    [data-theme='dark'] .desk-wizard-wrap {
+        background: var(--card-bg);
+    }
+    [data-theme='dark'] .wizard-step-counter-top {
+        color: rgb(248, 248, 248);
+    }
+    [data-theme='dark'] .wizard-steps::before {
+        background: var(--outline-gray-2);
+    }
+    [data-theme='dark'] .wizard-circle {
+        background: var(--surface-gray-2);
+        border-color: var(--outline-gray-3);
+    }
+    [data-theme='dark'] .wizard-step.active .wizard-circle {
+        background: var(--surface-blueprint-6);
+        border-color: var(--surface-blueprint-6);
+        color: rgb(248, 248, 248);
+        box-shadow: 0 0 0 4px var(--surface-blueprint-3);
+    }
+    [data-theme='dark'] .wizard-step.complete .wizard-circle {
+        color: rgb(248, 248, 248);
+    }
+    [data-theme='dark'] .wizard-step.active .wizard-label {
+        color: rgb(248, 248, 248);
+    }
+    [data-theme='dark'] .wizard-prev {
+        background: var(--surface-gray-2);
+        color: rgb(248, 248, 248);
+        border-color: var(--outline-gray-3);
+    }
+    [data-theme='dark'] .wizard-prev:hover {
+        background: var(--surface-gray-3);
+    }
+    [data-theme='dark'] .wizard-next {
+        background: var(--surface-blueprint-6);
+        color: rgb(248, 248, 248);
+    }
+    [data-theme='dark'] .wizard-next:hover {
+        background: var(--surface-blueprint-5);
     }
 `);
 
@@ -422,9 +471,6 @@ function update_wizard_state($wrapper, $nav_links) {
     $wrapper.find(".wizard-prev").toggle(current > 0);
 
     const $next = $wrapper.find(".wizard-next");
-    if (current === total - 1) {
-        $next.text("Finish ✓").addClass("finish");
-    } else {
-        $next.text("Next ›").removeClass("finish");
-    }
+$next.toggle(current !== total - 1);
+$next.text("Next ›").removeClass("finish");
 }
