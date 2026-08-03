@@ -1438,20 +1438,24 @@ html[data-theme='dark'] .desktop-wrapper {
   img.app-icon {
     display: none;
   }
+
+  svg.desktop-alphabet {
+    display: none !important;
+  }
 }
 
 .desktop-icon[data-id="FINANCE"] .icon-container {
-  background: url('/assets/frappe/images/finance.png') no-repeat center center / cover;
+  background: url('/assets/frappe/images/finance.png') no-repeat center center / cover !important;
 }
 
 .desktop-icon[data-id="OPERATIONS"] .icon-container {
-  background: url('/assets/frappe/images/operations.png') no-repeat center center / cover;
+  background: url('/assets/frappe/images/operations.png') no-repeat center center / cover !important;
 }
 
 .desktop-icon[data-id="SALES"] .icon-container {
-  background: url('/assets/frappe/images/sales.png') no-repeat center center / cover;
+  background: url('/assets/frappe/images/sales.png') no-repeat center center / cover !important;
 }
 
 .desktop-icon[data-id="PEOPLE"] .icon-container {
-  background: url('/assets/frappe/images/People.png') no-repeat center center / cover;
+  background: url('/assets/frappe/images/People.png') no-repeat center center / cover !important;
 }
