@@ -578,7 +578,7 @@
 				background: var(--surface-blueprint-2, #D6D9FF);
 				padding: 14px 20px;
 				margin: 0 -12px 8px -12px;
-				border-radius: 8px;
+				border-radius: 8px 8px 0 0;
 
 				.widget-label .widget-title {
 					color: var(--ink-blueprint-8, #000FCE);
@@ -616,7 +616,7 @@
 					font-size: var(--text-base);
 					color: var(--ink-gray-8, #36364E);
 					&:hover {
-						color: var(--ink-blueprint-1, #000FCE);
+						color: var(--ink-blueprint-4, #000FCC);
 					}
 				}
 
