@@ -576,14 +576,14 @@
 
 			.widget-head {
 				background: var(--surface-blueprint-2, #D6D9FF);
-				padding: 14px 24px;
-				margin: 0 -20px 8px -20px;
-				border-radius: 24px 24px 0 0;
+				padding: 14px 20px;
+				margin: 0 -12px 8px -12px;
+				border-radius: 8px;
 
 				.widget-label .widget-title {
 					color: var(--ink-blueprint-8, #000FCE);
 					font-size: var(--text-lg);
-					font-weight: var(--weight-bold);
+					font-weight: 600;
 
 					svg {
 						display: none;
