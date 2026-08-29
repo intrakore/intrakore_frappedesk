@@ -569,7 +569,7 @@
 			padding: 8px 20px;
 			gap: 16px;
 			border: 1px solid var(--outline-blueprint-1, #B9BEFE);
-			border-radius: 24px;
+			border-radius: 12px;
 			background: var(--surface-white, #F9F9F9);
 			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.35), 0 6px 8px -4px rgba(0, 0, 0, 0.10);
 			overflow: hidden;
@@ -578,7 +578,7 @@
 				background: var(--surface-blueprint-2, #D6D9FF);
 				padding: 14px 20px;
 				margin: 0 -12px 8px -12px;
-				border-radius: 8px 8px 0 0;
+				border-radius: 12px 12px 0 0;
 
 				.widget-label .widget-title {
 					color: var(--ink-blueprint-8, #000FCE);
