@@ -566,37 +566,57 @@
 		}
 
 		&.links-widget-box {
-			.widget-head .widget-label .widget-title svg {
-				margin: 2px;
-				margin-right: 12px !important;
+			padding: 8px 20px;
+			gap: 16px;
+			border: 1px solid var(--outline-blueprint-1, #B9BEFE);
+			border-radius: 24px;
+			background: var(--surface-white, #F9F9F9);
+			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.35), 0 6px 8px -4px rgba(0, 0, 0, 0.10);
+			overflow: hidden;
+
+			.widget-head {
+				background: var(--surface-blueprint-2, #D6D9FF);
+				padding: 12px 16px;
+				margin: 0 -20px 8px -20px;
+				border-radius: 24px 24px 0 0;
+
+				.widget-label .widget-title {
+					color: var(--ink-blueprint-8, #000FCE);
+					font-size: var(--text-lg);
+					font-weight: var(--weight-bold);
+
+					svg {
+						display: none;
+					}
+				}
 			}
 
-			padding: 10px 12px;
-			border: 1px solid var(--border-color);
+			.widget-body {
+				padding: 0;
+			}
 
 			.link-item {
 				display: flex;
 				text-decoration: none;
-				@include get_textstyle("sm", "regular");
-				color: var(--text-color);
-				padding: 4px;
-				margin-left: -4px;
-				margin-bottom: 0px;
-				border-radius: var(--border-radius-md);
+				padding: 10px 0;
+				margin: 0;
+				border-bottom: 1px solid var(--outline-gray-1, #D5D5E2);
 				cursor: pointer;
 
 				&:first-child {
-					margin-top: 12px;
+					margin-top: 0;
 				}
 
 				&:last-child {
-					margin-bottom: 0px !important;
+					border-bottom: none;
 				}
 
 				.link-content {
 					flex: 1;
+					font-size: var(--text-base);
+					color: var(--ink-gray-8, #36364E);
 					&:hover {
-						color: var(--invert-neutral);
+						color: var(--ink-blueprint-1, #000FCE);
 					}
 				}
 
@@ -604,14 +624,8 @@
 					color: var(--text-muted);
 				}
 
-				.popover {
-					display: block;
-					top: -60px;
-					max-width: 220px;
-
-					&.top > .arrow {
-						left: 20%;
-					}
+				svg {
+					stroke: var(--ink-gray-9, #212130);
 				}
 
 				&:focus-visible {
@@ -621,15 +635,10 @@
 				}
 			}
 
-			.widget-head .widget-label .widget-title {
-				font-size: var(--text-base);
-				font-weight: var(--weight-medium);
-			}
-
 			@include media-breakpoint-down(md) {
 				.link-item {
 					&:first-child {
-						margin-top: 5px;
+						margin-top: 0;
 					}
 				}
 			}
@@ -1458,4 +1467,20 @@ html[data-theme='dark'] .desktop-wrapper {
 
 .desktop-icon[data-id="PEOPLE"] .icon-container {
   background: url('/assets/frappe/images/People.png') no-repeat center center / cover !important;
+}
+// Intrakore — My Space custom icon
+.desktop-icon[data-id="My Space"] .icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: url('/assets/frappe/images/myspace.png') no-repeat center center / cover !important;
+
+  img.app-icon {
+    display: none;
+  }
+
+  svg.desktop-alphabet {
+    display: none !important;
+  }
 }
