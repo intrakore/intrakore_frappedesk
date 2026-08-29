@@ -571,7 +571,7 @@
 			border: 1px solid var(--outline-blueprint-1, #B9BEFE);
 			border-radius: 12px;
 			background: var(--surface-white, #F9F9F9);
-			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.35), 0 6px 8px -4px rgba(0, 0, 0, 0.10);
+			box-shadow: var(--shadow-lg);
 			overflow: hidden;
 
 			.widget-head {
@@ -601,7 +601,6 @@
 				padding: 10px 12px;
 				margin: 0 -12px;
 				border-bottom: 1px solid var(--outline-gray-1, #D5D5E2);
-				border-radius: 6px;
 				cursor: pointer;
 
 				&:hover {
