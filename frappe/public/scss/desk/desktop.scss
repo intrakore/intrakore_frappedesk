@@ -612,7 +612,7 @@
 					}
 
 					svg {
-						stroke: var(--ink-blueprint-4, #000FCC);
+						fill: var(--ink-blueprint-4, #000FCC);
 					}
 				}
 
@@ -639,7 +639,7 @@
 				}
 
 				svg {
-					stroke: var(--ink-gray-9, #212130);
+					fill: var(--ink-gray-9, #212130);
 				}
 
 				&:focus-visible {
