@@ -541,11 +541,12 @@
 			border: 1px solid var(--border-color);
 
 			&:hover {
-				--icon-stroke: var(--invert-neutral);
+				--icon-stroke: var(--ink-blueprint-3, #2A37F4);
 				.widget-label .widget-title {
-					color: var(--invert-neutral);
+					color: var(--ink-blueprint-3, #2A37F4);
 				}
-				border-color: var(--invert-neutral);
+				border-color: var(--outline-blueprint-3);
+				box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 			}
 
 			.widget-label .widget-title {
