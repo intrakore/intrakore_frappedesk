@@ -606,6 +606,14 @@
 
 				&:hover {
 					background-color: var(--surface-blueprint-1, #EBECFF);
+
+					.link-content {
+						color: var(--ink-blueprint-4, #000FCC);
+					}
+
+					svg {
+						stroke: var(--ink-blueprint-4, #000FCC);
+					}
 				}
 
 				&:first-child {
