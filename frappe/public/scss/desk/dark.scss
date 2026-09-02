@@ -296,4 +296,39 @@ $check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xm
         border-width: 1.2px;
     }
 }
+	.widget {
+		&.links-widget-box {
+			border-color: var(--outline-blueprint-3, #0D1BF2);
+
+			.widget-head {
+				background: var(--surface-blueprint-3, #000B99);
+
+				.widget-label .widget-title {
+					color: var(--ink-blueprint-1, #F9F9F9);
+				}
+			}
+
+			.link-item {
+				&:hover {
+					.link-content {
+						color: var(--ink-blueprint-3, #99A2FF);
+					}
+					svg {
+						fill: var(--ink-blueprint-3, #99A2FF);
+					}
+				}
+			}
+		}
+
+		&.shortcut-widget-box {
+			&:hover {
+				--icon-stroke: var(--ink-blueprint-3, #99A2FF);
+				.widget-label .widget-title {
+					color: var(--ink-blueprint-3, #99A2FF);
+				}
+				border-color: var(--outline-blueprint-3, #0D1BF2);
+			}
+		}
+	}
 }
+
